@@ -17,17 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        QorumLogs.enabled = true
-//        QorumLogs.test()
-//        
-//        QLPlusLine()
-//        QLShortLine()
-        
-//        print(__FILE__)
-//        print(__FUNCTION__)
-//        print(__LINE__)
-        SXMLog("aacc")
-        SXMLog("aa", fileName: "lark", methodName: "nan")
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        window?.rootViewController = MainViewController()
+        window?.makeKeyAndVisible()
         
         return true
     }
