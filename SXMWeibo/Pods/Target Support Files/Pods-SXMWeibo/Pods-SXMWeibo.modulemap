@@ -1,0 +1,6 @@
+framework module Pods_SXMWeibo {
+  umbrella header "Pods-SXMWeibo-umbrella.h"
+
+  export *
+  module * { export * }
+}

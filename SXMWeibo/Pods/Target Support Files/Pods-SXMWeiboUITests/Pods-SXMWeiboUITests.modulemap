@@ -1,0 +1,6 @@
+framework module Pods_SXMWeiboUITests {
+  umbrella header "Pods-SXMWeiboUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147479E2E30149D8DAC13532 /* Pods_SXMWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6ACC146B8CD2470843BD53 /* Pods_SXMWeibo.framework */; };
+		8E608B0A2D1A26BB3080FFC5 /* Pods_SXMWeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF05C5EA3DFB8F573B631AB /* Pods_SXMWeiboTests.framework */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148321E225FFD00BD2E0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148311E225FFD00BD2E0A /* ViewController.swift */; };
 		C7E148351E225FFD00BD2E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E148331E225FFD00BD2E0A /* Main.storyboard */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
 		C7E148501E225FFD00BD2E0A /* SXMWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1484F1E225FFD00BD2E0A /* SXMWeiboUITests.swift */; };
+		F3BECB2E542DEA2EC1E4E2D3 /* Pods_SXMWeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3689C8003730F7D95B7265 /* Pods_SXMWeiboUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B32126BDC2E22B16E127289 /* Pods-SXMWeiboTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeiboTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeiboTests/Pods-SXMWeiboTests.release.xcconfig"; sourceTree = "<group>"; };
+		1FF05C5EA3DFB8F573B631AB /* Pods_SXMWeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SXMWeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AB79F691CA2F06289FA370F /* Pods-SXMWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeibo/Pods-SXMWeibo.release.xcconfig"; sourceTree = "<group>"; };
+		583AE09867FD2F939A2360A9 /* Pods-SXMWeiboUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeiboUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeiboUITests/Pods-SXMWeiboUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0C68B05D66BABAC8C0F6F2E /* Pods-SXMWeiboTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeiboTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeiboTests/Pods-SXMWeiboTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148311E225FFD00BD2E0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +53,10 @@
 		C7E1484B1E225FFD00BD2E0A /* SXMWeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SXMWeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1484F1E225FFD00BD2E0A /* SXMWeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXMWeiboUITests.swift; sourceTree = "<group>"; };
 		C7E148511E225FFD00BD2E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5BFD20A1C256FBF43F8C7D9 /* Pods-SXMWeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeiboUITests/Pods-SXMWeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC6ACC146B8CD2470843BD53 /* Pods_SXMWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SXMWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F505A53A5AB09942BEBCD03B /* Pods-SXMWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeibo/Pods-SXMWeibo.debug.xcconfig"; sourceTree = "<group>"; };
+		FC3689C8003730F7D95B7265 /* Pods_SXMWeiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SXMWeiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147479E2E30149D8DAC13532 /* Pods_SXMWeibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E608B0A2D1A26BB3080FFC5 /* Pods_SXMWeiboTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +80,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BECB2E542DEA2EC1E4E2D3 /* Pods_SXMWeiboUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CD8A64CEC93B6FE7AD5445E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F505A53A5AB09942BEBCD03B /* Pods-SXMWeibo.debug.xcconfig */,
+				3AB79F691CA2F06289FA370F /* Pods-SXMWeibo.release.xcconfig */,
+				B0C68B05D66BABAC8C0F6F2E /* Pods-SXMWeiboTests.debug.xcconfig */,
+				0B32126BDC2E22B16E127289 /* Pods-SXMWeiboTests.release.xcconfig */,
+				583AE09867FD2F939A2360A9 /* Pods-SXMWeiboUITests.debug.xcconfig */,
+				D5BFD20A1C256FBF43F8C7D9 /* Pods-SXMWeiboUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C345F1F600E80A882A541DB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC6ACC146B8CD2470843BD53 /* Pods_SXMWeibo.framework */,
+				1FF05C5EA3DFB8F573B631AB /* Pods_SXMWeiboTests.framework */,
+				FC3689C8003730F7D95B7265 /* Pods_SXMWeiboUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C7E148231E225FFD00BD2E0A = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +117,8 @@
 				C7E148431E225FFD00BD2E0A /* SXMWeiboTests */,
 				C7E1484E1E225FFD00BD2E0A /* SXMWeiboUITests */,
 				C7E1482D1E225FFD00BD2E0A /* Products */,
+				5CD8A64CEC93B6FE7AD5445E /* Pods */,
+				C345F1F600E80A882A541DB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7E148541E225FFD00BD2E0A /* Build configuration list for PBXNativeTarget "SXMWeibo" */;
 			buildPhases = (
+				7461E78210F297092228B8A7 /* [CP] Check Pods Manifest.lock */,
 				C7E148281E225FFD00BD2E0A /* Sources */,
 				C7E148291E225FFD00BD2E0A /* Frameworks */,
 				C7E1482A1E225FFD00BD2E0A /* Resources */,
+				EAD2A02C5D34BC25D8ADA73A /* [CP] Embed Pods Frameworks */,
+				A772BFEFC48FAD729B3BC4C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7E148571E225FFD00BD2E0A /* Build configuration list for PBXNativeTarget "SXMWeiboTests" */;
 			buildPhases = (
+				4EC28415CA54711F84A23D6A /* [CP] Check Pods Manifest.lock */,
 				C7E1483C1E225FFD00BD2E0A /* Sources */,
 				C7E1483D1E225FFD00BD2E0A /* Frameworks */,
 				C7E1483E1E225FFD00BD2E0A /* Resources */,
+				5F5B275FFD6067CAC95695F1 /* [CP] Embed Pods Frameworks */,
+				049CD9BE6B897E43A0691773 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7E1485A1E225FFD00BD2E0A /* Build configuration list for PBXNativeTarget "SXMWeiboUITests" */;
 			buildPhases = (
+				573C6BBBFA0C70B28342759C /* [CP] Check Pods Manifest.lock */,
 				C7E148471E225FFD00BD2E0A /* Sources */,
 				C7E148481E225FFD00BD2E0A /* Frameworks */,
 				C7E148491E225FFD00BD2E0A /* Resources */,
+				79A15F55473CF4B86F3B51D4 /* [CP] Embed Pods Frameworks */,
+				EB1EAB3162D90573DFD33595 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +295,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		049CD9BE6B897E43A0691773 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeiboTests/Pods-SXMWeiboTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EC28415CA54711F84A23D6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		573C6BBBFA0C70B28342759C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5B275FFD6067CAC95695F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeiboTests/Pods-SXMWeiboTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7461E78210F297092228B8A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79A15F55473CF4B86F3B51D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeiboUITests/Pods-SXMWeiboUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A772BFEFC48FAD729B3BC4C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeibo/Pods-SXMWeibo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAD2A02C5D34BC25D8ADA73A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeibo/Pods-SXMWeibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1EAB3162D90573DFD33595 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeiboUITests/Pods-SXMWeiboUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7E148281E225FFD00BD2E0A /* Sources */ = {
@@ -383,12 +570,14 @@
 		};
 		C7E148551E225FFD00BD2E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F505A53A5AB09942BEBCD03B /* Pods-SXMWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = SXMWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = shenming.SXMWeibo;
 				PRODUCT_NAME = "SXM微博";
 			};
@@ -396,6 +585,7 @@
 		};
 		C7E148561E225FFD00BD2E0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AB79F691CA2F06289FA370F /* Pods-SXMWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -409,6 +599,7 @@
 		};
 		C7E148581E225FFD00BD2E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0C68B05D66BABAC8C0F6F2E /* Pods-SXMWeiboTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SXMWeiboTests/Info.plist;
@@ -421,6 +612,7 @@
 		};
 		C7E148591E225FFD00BD2E0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B32126BDC2E22B16E127289 /* Pods-SXMWeiboTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SXMWeiboTests/Info.plist;
@@ -433,6 +625,7 @@
 		};
 		C7E1485B1E225FFD00BD2E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 583AE09867FD2F939A2360A9 /* Pods-SXMWeiboUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SXMWeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -445,6 +638,7 @@
 		};
 		C7E1485C1E225FFD00BD2E0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5BFD20A1C256FBF43F8C7D9 /* Pods-SXMWeiboUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SXMWeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -474,6 +668,7 @@
 				C7E148561E225FFD00BD2E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7E148571E225FFD00BD2E0A /* Build configuration list for PBXNativeTarget "SXMWeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +677,7 @@
 				C7E148591E225FFD00BD2E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7E1485A1E225FFD00BD2E0A /* Build configuration list for PBXNativeTarget "SXMWeiboUITests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +686,7 @@
 				C7E1485C1E225FFD00BD2E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

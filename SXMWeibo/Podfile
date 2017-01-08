@@ -1,0 +1,16 @@
+platform :ios, '8.0'
+
+target 'SXMWeibo' do
+  use_frameworks!
+
+  pod 'QorumLogs', '0.2'
+
+  target 'SXMWeiboTests' do
+    inherit! :search_paths
+  end
+
+  target 'SXMWeiboUITests' do
+    inherit! :search_paths
+  end
+
+end
