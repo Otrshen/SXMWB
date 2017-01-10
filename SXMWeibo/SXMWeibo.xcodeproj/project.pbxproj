@@ -16,6 +16,7 @@
 		C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD21E2276A900710598 /* ProfileTableViewController.swift */; };
 		C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = C7204AD51E23BEE600710598 /* MainVCSettings.json */; };
 		C7204AD81E23BEE600710598 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD61E23BEE600710598 /* NullViewController.swift */; };
+		C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD91E2518AF00710598 /* UIButton+Extension.swift */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -53,6 +54,7 @@
 		C7204AD21E2276A900710598 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		C7204AD51E23BEE600710598 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		C7204AD61E23BEE600710598 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		C7204AD91E2518AF00710598 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		C7204AC91E2275E500710598 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C7204AD91E2518AF00710598 /* UIButton+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
 				C7204ACF1E22769600710598 /* DiscoverTableViewController.swift in Sources */,
+				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,
 				C7204ACB1E22764100710598 /* MainViewController.swift in Sources */,
 				C7204AD81E23BEE600710598 /* NullViewController.swift in Sources */,
 			);
