@@ -18,6 +18,18 @@ class MainViewController: UITabBarController {
         addChildViewControllers()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBar.addSubview(composeButton)
+        
+        // 设置加号按钮的位置
+        let rect = composeButton.frame
+        let width = tabBar.bounds.width / CGFloat(childViewControllers.count)
+        composeButton.frame = CGRect(x: 2 * width, y: 0, width: width, height: rect.height)
+//        composeButton.frame = CGRectOffset(rect, 2 * width, 0)
+    }
+    
     func addChildViewControllers() {
         guard let filePath = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil) else {
             return
@@ -51,6 +63,7 @@ class MainViewController: UITabBarController {
             // 只要try对应的方法发生了异常, 就会执行catch{}中的代码
             addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
             addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+            addChildViewController("NullViewController", title: "", imageName: "")
             addChildViewController("DiscoverTableViewController", title: "发现", imageName: "tabbar_discover")
             addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
         }
@@ -89,4 +102,21 @@ class MainViewController: UITabBarController {
         self.addChildViewController(nav)
     }
 
+    // MARK: - 懒加载
+    lazy var composeButton : UIButton = {
+        () -> UIButton in
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        btn.addTarget(self, action: Selector("composeBtnClick"), forControlEvents: UIControlEvents.TouchUpInside)
+        btn.sizeToFit()
+        return btn
+    }()
+    
+    @objc private func composeBtnClick() {
+        SXMLog("a")
+    }
+    
 }
