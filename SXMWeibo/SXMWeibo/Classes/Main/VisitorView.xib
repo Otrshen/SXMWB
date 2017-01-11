@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VisitorView" customModule="SXM微博" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-e8-r2S">
+                    <rect key="frame" x="212" y="212" width="175" height="175"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_mask_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="3ut-D7-z8c">
+                    <rect key="frame" x="213" y="212" width="175" height="175"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-88-NO2">
+                    <rect key="frame" x="253" y="265" width="94" height="90"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEg-hR-VVh">
+                    <rect key="frame" x="190" y="407" width="220" height="41"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="bmm-52-dnI"/>
+                        <constraint firstAttribute="height" constant="21" id="oQU-Hy-OIz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="oQU-Hy-OIz"/>
+                        </mask>
+                    </variation>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SU5-Wd-2if">
+                    <rect key="frame" x="190" y="468" width="100" height="30"/>
+                    <animations/>
+                    <state key="normal" title="注册" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYJ-mo-rJx">
+                    <rect key="frame" x="310" y="468" width="100" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="dyQ-gC-udc"/>
+                    </constraints>
+                    <state key="normal" title="注册" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.90980392156862744" green="0.9137254901960784" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="SU5-Wd-2if" firstAttribute="top" secondItem="rEg-hR-VVh" secondAttribute="bottom" constant="20" id="1p3-AS-DDD"/>
+                <constraint firstItem="SU5-Wd-2if" firstAttribute="leading" secondItem="rEg-hR-VVh" secondAttribute="leading" id="AKH-Lb-1Gt"/>
+                <constraint firstItem="rEg-hR-VVh" firstAttribute="centerX" secondItem="VMQ-88-NO2" secondAttribute="centerX" id="Ebx-5G-tOz"/>
+                <constraint firstItem="SU5-Wd-2if" firstAttribute="width" secondItem="XYJ-mo-rJx" secondAttribute="width" id="FaN-20-iog"/>
+                <constraint firstItem="VMQ-88-NO2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Gt4-rV-kLF"/>
+                <constraint firstItem="VMQ-88-NO2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="N57-Mv-kwB"/>
+                <constraint firstItem="3ut-D7-z8c" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QsV-oH-LtL"/>
+                <constraint firstItem="VMQ-88-NO2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S8a-W0-d4M"/>
+                <constraint firstItem="3ut-D7-z8c" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cL1-W3-LeD"/>
+                <constraint firstItem="XYJ-mo-rJx" firstAttribute="trailing" secondItem="rEg-hR-VVh" secondAttribute="trailing" id="had-Fe-V5D"/>
+                <constraint firstItem="rEg-hR-VVh" firstAttribute="top" secondItem="SmT-e8-r2S" secondAttribute="bottom" constant="20" id="ohO-Dx-7Il"/>
+                <constraint firstItem="SmT-e8-r2S" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qnH-Rj-Pq7"/>
+                <constraint firstItem="XYJ-mo-rJx" firstAttribute="top" secondItem="SU5-Wd-2if" secondAttribute="top" id="t4x-uf-iE6"/>
+                <constraint firstItem="SmT-e8-r2S" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xxF-eU-6Fp"/>
+            </constraints>
+            <point key="canvasLocation" x="154" y="370"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_button_white_disable" width="11" height="30"/>
+        <image name="visitordiscover_feed_image_house" width="94" height="90"/>
+        <image name="visitordiscover_feed_image_smallicon" width="175" height="175"/>
+        <image name="visitordiscover_feed_mask_smallicon" width="175" height="175"/>
+    </resources>
+</document>

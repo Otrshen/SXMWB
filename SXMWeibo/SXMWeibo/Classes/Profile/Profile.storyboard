@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Yk-Se-cZB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--我-->
+        <scene sceneID="UyC-xM-ik8">
+            <objects>
+                <tableViewController id="fKM-ED-HVT" customClass="ProfileTableViewController" customModule="SXM微博" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8zc-Mv-zpT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ula-da-l4b">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ula-da-l4b" id="dTt-Mg-be3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fKM-ED-HVT" id="rXy-pp-hDK"/>
+                            <outlet property="delegate" destination="fKM-ED-HVT" id="mpb-Ji-7ug"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我" id="Pcb-8a-DdZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZN-xf-eq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="2770"/>
+        </scene>
+        <!--我-->
+        <scene sceneID="koC-kJ-8eZ">
+            <objects>
+                <navigationController id="0Yk-Se-cZB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" selectedImage="tabbar_profile_highlighted" id="Xa3-ef-GyZ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="guh-Jh-cdp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fKM-ED-HVT" kind="relationship" relationship="rootViewController" id="JFs-Yt-vIW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nac-sv-n5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="2770"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_profile" width="30" height="30"/>
+        <image name="tabbar_profile_highlighted" width="30" height="30"/>
+    </resources>
+</document>

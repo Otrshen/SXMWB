@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ddO-q8-5uH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--首页-->
+        <scene sceneID="Xkt-mA-dU6">
+            <objects>
+                <tableViewController id="6lE-gD-2Zh" customClass="HomeTableViewController" customModule="SXM微博" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J5z-KI-ybB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oVu-M0-CeJ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oVu-M0-CeJ" id="7UG-Yc-B6T">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6lE-gD-2Zh" id="dgG-h9-DCa"/>
+                            <outlet property="delegate" destination="6lE-gD-2Zh" id="zoS-Wa-VP1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="首页" id="wuK-zB-11m"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6WR-rG-hB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="-325"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="LHl-AG-k8C">
+            <objects>
+                <navigationController id="ddO-q8-5uH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_home" selectedImage="tabbar_home_highlighted" id="LHl-Kh-fU8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RuT-xu-F8X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6lE-gD-2Zh" kind="relationship" relationship="rootViewController" id="c3r-hZ-UHl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejv-Jp-jJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="-325"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_home" width="30" height="30"/>
+        <image name="tabbar_home_highlighted" width="30" height="30"/>
+    </resources>
+</document>

@@ -18,11 +18,14 @@
 		C7204AD81E23BEE600710598 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD61E23BEE600710598 /* NullViewController.swift */; };
 		C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD91E2518AF00710598 /* UIButton+Extension.swift */; };
 		C7204ADC1E2659E800710598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204ADB1E2659E800710598 /* Main.storyboard */; };
-		C7204ADE1E265CB400710598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204ADD1E265CB400710598 /* Home.storyboard */; };
-		C7204AE01E265CF300710598 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204ADF1E265CF300710598 /* Message.storyboard */; };
-		C7204AE21E265D0600710598 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE11E265D0600710598 /* Null.storyboard */; };
-		C7204AE41E265D1500710598 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE31E265D1500710598 /* Discover.storyboard */; };
-		C7204AE61E265D2500710598 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE51E265D2500710598 /* Profile.storyboard */; };
+		C7204AE81E26630500710598 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AE71E26630500710598 /* BaseTableViewController.swift */; };
+		C7204AEA1E26639400710598 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE91E26639400710598 /* Null.storyboard */; };
+		C7204AEC1E26639D00710598 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AEB1E26639D00710598 /* Discover.storyboard */; };
+		C7204AEE1E2663A600710598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AED1E2663A600710598 /* Home.storyboard */; };
+		C7204AF01E2663AE00710598 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AEF1E2663AE00710598 /* Message.storyboard */; };
+		C7204AF21E2663B400710598 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF11E2663B400710598 /* Profile.storyboard */; };
+		C7204AF41E26671C00710598 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AF31E26671C00710598 /* VisitorView.swift */; };
+		C7204AF61E26672E00710598 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF51E26672E00710598 /* VisitorView.xib */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -62,11 +65,14 @@
 		C7204AD61E23BEE600710598 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		C7204AD91E2518AF00710598 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C7204ADB1E2659E800710598 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C7204ADD1E265CB400710598 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		C7204ADF1E265CF300710598 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
-		C7204AE11E265D0600710598 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
-		C7204AE31E265D1500710598 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
-		C7204AE51E265D2500710598 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C7204AE71E26630500710598 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		C7204AE91E26639400710598 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
+		C7204AEB1E26639D00710598 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		C7204AED1E2663A600710598 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C7204AEF1E2663AE00710598 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		C7204AF11E2663B400710598 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C7204AF31E26671C00710598 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		C7204AF51E26672E00710598 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 		C7204AC41E2275E500710598 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				C7204AEB1E26639D00710598 /* Discover.storyboard */,
 				C7204ACE1E22769600710598 /* DiscoverTableViewController.swift */,
 			);
 			path = Discover;
@@ -166,6 +173,7 @@
 		C7204AC51E2275E500710598 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C7204AED1E2663A600710598 /* Home.storyboard */,
 				C7204ACC1E22766F00710598 /* HomeTableViewController.swift */,
 			);
 			path = Home;
@@ -177,11 +185,9 @@
 				C7204AD41E23BEE600710598 /* Resource */,
 				C7204ACA1E22764100710598 /* MainViewController.swift */,
 				C7204ADB1E2659E800710598 /* Main.storyboard */,
-				C7204AE51E265D2500710598 /* Profile.storyboard */,
-				C7204AE31E265D1500710598 /* Discover.storyboard */,
-				C7204AE11E265D0600710598 /* Null.storyboard */,
-				C7204ADF1E265CF300710598 /* Message.storyboard */,
-				C7204ADD1E265CB400710598 /* Home.storyboard */,
+				C7204AE71E26630500710598 /* BaseTableViewController.swift */,
+				C7204AF31E26671C00710598 /* VisitorView.swift */,
+				C7204AF51E26672E00710598 /* VisitorView.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 		C7204AC71E2275E500710598 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				C7204AEF1E2663AE00710598 /* Message.storyboard */,
 				C7204AD01E2276A200710598 /* MessageTableViewController.swift */,
 			);
 			path = Message;
@@ -197,6 +204,7 @@
 		C7204AC81E2275E500710598 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C7204AF11E2663B400710598 /* Profile.storyboard */,
 				C7204AD21E2276A900710598 /* ProfileTableViewController.swift */,
 			);
 			path = Profile;
@@ -213,6 +221,7 @@
 		C7204AD41E23BEE600710598 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C7204AE91E26639400710598 /* Null.storyboard */,
 				C7204AD51E23BEE600710598 /* MainVCSettings.json */,
 				C7204AD61E23BEE600710598 /* NullViewController.swift */,
 			);
@@ -384,13 +393,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7204ADC1E2659E800710598 /* Main.storyboard in Resources */,
+				C7204AEA1E26639400710598 /* Null.storyboard in Resources */,
+				C7204AF21E2663B400710598 /* Profile.storyboard in Resources */,
+				C7204AEC1E26639D00710598 /* Discover.storyboard in Resources */,
+				C7204AEE1E2663A600710598 /* Home.storyboard in Resources */,
 				C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */,
-				C7204AE61E265D2500710598 /* Profile.storyboard in Resources */,
-				C7204AE01E265CF300710598 /* Message.storyboard in Resources */,
 				C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */,
-				C7204ADE1E265CB400710598 /* Home.storyboard in Resources */,
-				C7204AE41E265D1500710598 /* Discover.storyboard in Resources */,
-				C7204AE21E265D0600710598 /* Null.storyboard in Resources */,
+				C7204AF01E2663AE00710598 /* Message.storyboard in Resources */,
+				C7204AF61E26672E00710598 /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,12 +563,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7204AE81E26630500710598 /* BaseTableViewController.swift in Sources */,
 				C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */,
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
 				C7204ACF1E22769600710598 /* DiscoverTableViewController.swift in Sources */,
 				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,
+				C7204AF41E26671C00710598 /* VisitorView.swift in Sources */,
 				C7204ACB1E22764100710598 /* MainViewController.swift in Sources */,
 				C7204AD81E23BEE600710598 /* NullViewController.swift in Sources */,
 			);
