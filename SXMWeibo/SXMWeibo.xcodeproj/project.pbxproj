@@ -17,6 +17,12 @@
 		C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = C7204AD51E23BEE600710598 /* MainVCSettings.json */; };
 		C7204AD81E23BEE600710598 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD61E23BEE600710598 /* NullViewController.swift */; };
 		C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AD91E2518AF00710598 /* UIButton+Extension.swift */; };
+		C7204ADC1E2659E800710598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204ADB1E2659E800710598 /* Main.storyboard */; };
+		C7204ADE1E265CB400710598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204ADD1E265CB400710598 /* Home.storyboard */; };
+		C7204AE01E265CF300710598 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204ADF1E265CF300710598 /* Message.storyboard */; };
+		C7204AE21E265D0600710598 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE11E265D0600710598 /* Null.storyboard */; };
+		C7204AE41E265D1500710598 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE31E265D1500710598 /* Discover.storyboard */; };
+		C7204AE61E265D2500710598 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AE51E265D2500710598 /* Profile.storyboard */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -55,6 +61,12 @@
 		C7204AD51E23BEE600710598 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		C7204AD61E23BEE600710598 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		C7204AD91E2518AF00710598 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		C7204ADB1E2659E800710598 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C7204ADD1E265CB400710598 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C7204ADF1E265CF300710598 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		C7204AE11E265D0600710598 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
+		C7204AE31E265D1500710598 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		C7204AE51E265D2500710598 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +176,12 @@
 			children = (
 				C7204AD41E23BEE600710598 /* Resource */,
 				C7204ACA1E22764100710598 /* MainViewController.swift */,
+				C7204ADB1E2659E800710598 /* Main.storyboard */,
+				C7204AE51E265D2500710598 /* Profile.storyboard */,
+				C7204AE31E265D1500710598 /* Discover.storyboard */,
+				C7204AE11E265D0600710598 /* Null.storyboard */,
+				C7204ADF1E265CF300710598 /* Message.storyboard */,
+				C7204ADD1E265CB400710598 /* Home.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -365,8 +383,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7204ADC1E2659E800710598 /* Main.storyboard in Resources */,
 				C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */,
+				C7204AE61E265D2500710598 /* Profile.storyboard in Resources */,
+				C7204AE01E265CF300710598 /* Message.storyboard in Resources */,
 				C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */,
+				C7204ADE1E265CB400710598 /* Home.storyboard in Resources */,
+				C7204AE41E265D1500710598 /* Discover.storyboard in Resources */,
+				C7204AE21E265D0600710598 /* Null.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -646,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -660,7 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = SXMWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = shenming.SXMWeibo;
@@ -675,7 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = SXMWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shenming.SXMWeibo;
 				PRODUCT_NAME = "SXM微博";

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YhM-Q3-vKk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--发现-->
+        <scene sceneID="jbb-2O-1iU">
+            <objects>
+                <tableViewController id="Ih7-aT-qJv" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nWE-NQ-IyC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ksL-fk-NOo">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ksL-fk-NOo" id="UdU-Sj-DpL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ih7-aT-qJv" id="IaT-4i-jzW"/>
+                            <outlet property="delegate" destination="Ih7-aT-qJv" id="EqG-G5-9Nt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="发现" id="XMY-Pp-gB2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOt-eM-qys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="1905"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="v6f-z5-clZ">
+            <objects>
+                <navigationController id="YhM-Q3-vKk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discover_highlighted" id="OZQ-Wj-UZz"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xJx-sQ-r6h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ih7-aT-qJv" kind="relationship" relationship="rootViewController" id="3nu-iE-5I7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gnx-fy-dPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="1898"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_discover" width="30" height="30"/>
+        <image name="tabbar_discover_highlighted" width="30" height="30"/>
+    </resources>
+</document>
