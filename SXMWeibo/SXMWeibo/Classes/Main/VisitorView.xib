@@ -44,6 +44,9 @@
                     <state key="normal" title="注册" backgroundImage="common_button_white_disable">
                         <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="registerBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Hdf-Vg-mIl"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYJ-mo-rJx">
                     <rect key="frame" x="310" y="468" width="100" height="30"/>
@@ -51,9 +54,12 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="dyQ-gC-udc"/>
                     </constraints>
-                    <state key="normal" title="注册" backgroundImage="common_button_white_disable">
-                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="登录" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loginBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="6Wz-z3-AzV"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>
@@ -74,6 +80,13 @@
                 <constraint firstItem="XYJ-mo-rJx" firstAttribute="top" secondItem="SU5-Wd-2if" secondAttribute="top" id="t4x-uf-iE6"/>
                 <constraint firstItem="SmT-e8-r2S" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xxF-eU-6Fp"/>
             </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="VMQ-88-NO2" id="mIn-Sf-Ofo"/>
+                <outlet property="loginButton" destination="XYJ-mo-rJx" id="oJd-Cx-dcz"/>
+                <outlet property="registerButton" destination="SU5-Wd-2if" id="iH9-9z-LDe"/>
+                <outlet property="rotationImageView" destination="SmT-e8-r2S" id="QCJ-Xr-h9B"/>
+                <outlet property="titleLabel" destination="rEg-hR-VVh" id="W8f-0F-4Fw"/>
+            </connections>
             <point key="canvasLocation" x="154" y="370"/>
         </view>
     </objects>

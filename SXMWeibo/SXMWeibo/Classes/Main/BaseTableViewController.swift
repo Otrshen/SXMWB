@@ -18,8 +18,10 @@ class BaseTableViewController: UITableViewController {
     }
     
     private func setupVisitorView() {
-        let otherView = VisitorView.visitorView()
-        view = otherView
+        visitorView = VisitorView.visitorView()
+        view = visitorView
+        
+        visitorView?.delegate = self
     }
 
     override func viewDidLoad() {
@@ -27,4 +29,14 @@ class BaseTableViewController: UITableViewController {
         
     }
 
+}
+
+extension BaseTableViewController: VisitorViewDelegate {
+    func visitorViewDidClickLoginBtn(visitor: VisitorView) {
+        SXMLog("")
+    }
+    
+    func visitorViewDidClickRegisterBtn(visitor: VisitorView) {
+        SXMLog("")    
+    }
 }
