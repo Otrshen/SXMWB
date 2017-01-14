@@ -21,7 +21,19 @@ class BaseTableViewController: UITableViewController {
         visitorView = VisitorView.visitorView()
         view = visitorView
         
-        visitorView?.delegate = self
+        visitorView?.loginButton.addTarget(self, action: Selector("loginBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
+        visitorView?.registerButton.addTarget(self, action: Selector("registerBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("loginBtnClick:"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("registerBtnClick:"))
+    }
+    
+    @objc private func loginBtnClick(btn: UIButton) {
+        SXMLog("")
+    }
+    
+    @objc private func registerBtnClick(btn: UIButton) {
+        SXMLog("")        
     }
 
     override func viewDidLoad() {
@@ -29,14 +41,4 @@ class BaseTableViewController: UITableViewController {
         
     }
 
-}
-
-extension BaseTableViewController: VisitorViewDelegate {
-    func visitorViewDidClickLoginBtn(visitor: VisitorView) {
-        SXMLog("")
-    }
-    
-    func visitorViewDidClickRegisterBtn(visitor: VisitorView) {
-        SXMLog("")    
-    }
 }
