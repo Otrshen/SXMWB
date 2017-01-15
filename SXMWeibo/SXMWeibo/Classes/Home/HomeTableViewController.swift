@@ -18,8 +18,25 @@ class HomeTableViewController: BaseTableViewController {
             return
         }
         
+        setupNav()
+    }
+    
+    // MARK: - 内部控制方法
+    private func setupNav()
+    {
+        // 1.添加左右按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: Selector("leftBtnClick"))
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: Selector("rightBtnClick"))
+        
+        // 2.添加标题按钮
+        let titleButton = TitleButton()
+        titleButton.setTitle("LarkNan", forState: UIControlState.Normal)
+        titleButton.addTarget(self, action: Selector("titleBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
+        navigationItem.titleView = titleButton
+    }
+    
+    @objc private func titleBtnClick(btn: TitleButton) {
+        btn.selected = !btn.selected
     }
     
     @objc private func leftBtnClick() {
