@@ -17,5 +17,16 @@ class HomeTableViewController: BaseTableViewController {
             visitorView?.setupVisitorInfo(nil, title: "关注一些人，回到这里看看有什么惊喜")
             return
         }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: Selector("leftBtnClick"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: Selector("rightBtnClick"))
+    }
+    
+    @objc private func leftBtnClick() {
+        SXMLog("")
+    }
+    
+    @objc private func rightBtnClick() {
+        SXMLog("")
     }
 }

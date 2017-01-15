@@ -26,6 +26,7 @@
 		C7204AF21E2663B400710598 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF11E2663B400710598 /* Profile.storyboard */; };
 		C7204AF41E26671C00710598 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AF31E26671C00710598 /* VisitorView.swift */; };
 		C7204AF61E26672E00710598 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF51E26672E00710598 /* VisitorView.xib */; };
+		C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -73,6 +74,7 @@
 		C7204AF11E2663B400710598 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C7204AF31E26671C00710598 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		C7204AF51E26672E00710598 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				C7204AD91E2518AF00710598 /* UIButton+Extension.swift */,
+				C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
+				C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */,
 				C7204ACF1E22769600710598 /* DiscoverTableViewController.swift in Sources */,
 				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,
 				C7204AF41E26671C00710598 /* VisitorView.swift in Sources */,

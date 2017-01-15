@@ -16,6 +16,11 @@ class VisitorView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
+    class func visitorView() -> VisitorView {
+        return NSBundle.mainBundle().loadNibNamed("VisitorView", owner: nil
+            , options: nil).last as! VisitorView
+    }
+    
     func setupVisitorInfo(imageName: String? ,title: String) {
         titleLabel.text = title
         guard let name = imageName else {
@@ -37,10 +42,4 @@ class VisitorView: UIView {
         anim.removedOnCompletion = false
         rotationImageView.layer.addAnimation(anim, forKey: nil)
     }
-    
-    class func visitorView() -> VisitorView {
-        return NSBundle.mainBundle().loadNibNamed("VisitorView", owner: nil
-            , options: nil).last as! VisitorView
-    }
-    
 }
