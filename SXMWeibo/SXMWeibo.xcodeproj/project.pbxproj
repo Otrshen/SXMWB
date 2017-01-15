@@ -28,6 +28,8 @@
 		C7204AF61E26672E00710598 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF51E26672E00710598 /* VisitorView.xib */; };
 		C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */; };
 		C7585BAA1E2B844F00059B69 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA91E2B844F00059B69 /* TitleButton.swift */; };
+		C7585BAD1E2BA6E900059B69 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7585BAC1E2BA6E900059B69 /* Popover.storyboard */; };
+		C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -77,6 +79,8 @@
 		C7204AF51E26672E00710598 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		C7585BA91E2B844F00059B69 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		C7585BAC1E2BA6E900059B69 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
+		C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXMPresentationController.swift; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		C7204AC51E2275E500710598 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C7585BAB1E2BA6D000059B69 /* Popover */,
 				C7204AED1E2663A600710598 /* Home.storyboard */,
 				C7204ACC1E22766F00710598 /* HomeTableViewController.swift */,
 			);
@@ -232,6 +237,15 @@
 				C7204AD61E23BEE600710598 /* NullViewController.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C7585BAB1E2BA6D000059B69 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				C7585BAC1E2BA6E900059B69 /* Popover.storyboard */,
+				C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 		C7E148231E225FFD00BD2E0A = {
@@ -406,6 +420,7 @@
 				C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */,
 				C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */,
 				C7204AF01E2663AE00710598 /* Message.storyboard in Resources */,
+				C7585BAD1E2BA6E900059B69 /* Popover.storyboard in Resources */,
 				C7204AF61E26672E00710598 /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +591,7 @@
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
 				C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */,
 				C7204ACF1E22769600710598 /* DiscoverTableViewController.swift in Sources */,
+				C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */,
 				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,
 				C7204AF41E26671C00710598 /* VisitorView.swift in Sources */,
 				C7204ACB1E22764100710598 /* MainViewController.swift in Sources */,

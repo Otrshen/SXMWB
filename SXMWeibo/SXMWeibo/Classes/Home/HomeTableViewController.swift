@@ -36,7 +36,21 @@ class HomeTableViewController: BaseTableViewController {
     }
     
     @objc private func titleBtnClick(btn: TitleButton) {
+        // 修改状态
         btn.selected = !btn.selected
+        
+        // 显示菜单
+        let sb = UIStoryboard(name: "Popover", bundle: nil)
+        guard let menuView = sb.instantiateInitialViewController() else {
+            return
+        }
+        
+        // 设置转场代理
+        menuView.transitioningDelegate = self
+        // 设置转场动画
+        menuView.modalPresentationStyle = UIModalPresentationStyle.Custom
+        
+        presentViewController(menuView, animated: true, completion: nil)
     }
     
     @objc private func leftBtnClick() {
@@ -45,5 +59,12 @@ class HomeTableViewController: BaseTableViewController {
     
     @objc private func rightBtnClick() {
         SXMLog("")
+    }
+}
+
+extension HomeTableViewController:UIViewControllerTransitioningDelegate {
+
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return SXMPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
 }
