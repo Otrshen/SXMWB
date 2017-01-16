@@ -21,6 +21,23 @@ class SXMPresentationController: UIPresentationController {
     
     // 布局转场动画弹出的控件
     override func containerViewWillLayoutSubviews() {
+        // 设置弹出视图尺寸
         presentedView()?.frame = CGRect(x: 100, y: 45, width: 200, height: 200)
+        
+        // 添加蒙版
+        containerView?.insertSubview(coverButton, atIndex: 0)
+        coverButton.addTarget(self, action: Selector("coverBtnClick"), forControlEvents: UIControlEvents.TouchUpInside)
     }
+    
+    @objc private func coverBtnClick() {
+        SXMLog("")
+    }
+    
+    // MARK: - lazy
+    private var coverButton: UIButton = {
+        let btn = UIButton()
+        btn.frame = UIScreen.mainScreen().bounds
+        btn.backgroundColor = UIColor.clearColor()
+        return btn
+    }()
 }

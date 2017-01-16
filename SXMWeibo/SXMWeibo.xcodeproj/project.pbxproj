@@ -30,6 +30,7 @@
 		C7585BAA1E2B844F00059B69 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA91E2B844F00059B69 /* TitleButton.swift */; };
 		C7585BAD1E2BA6E900059B69 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7585BAC1E2BA6E900059B69 /* Popover.storyboard */; };
 		C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */; };
+		C7585BB11E2CF0D800059B69 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BB01E2CF0D800059B69 /* PopoverViewController.swift */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -81,6 +82,7 @@
 		C7585BA91E2B844F00059B69 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		C7585BAC1E2BA6E900059B69 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXMPresentationController.swift; sourceTree = "<group>"; };
+		C7585BB01E2CF0D800059B69 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				C7585BAC1E2BA6E900059B69 /* Popover.storyboard */,
+				C7585BB01E2CF0D800059B69 /* PopoverViewController.swift */,
 				C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */,
 			);
 			path = Popover;
@@ -586,6 +589,7 @@
 			files = (
 				C7204AE81E26630500710598 /* BaseTableViewController.swift in Sources */,
 				C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */,
+				C7585BB11E2CF0D800059B69 /* PopoverViewController.swift in Sources */,
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,

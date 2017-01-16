@@ -67,4 +67,55 @@ extension HomeTableViewController:UIViewControllerTransitioningDelegate {
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return SXMPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
+    
+    // 该方法用于放回一个负责转场如何出现的对象
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+    
+    // 如何消失
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+}
+
+extension HomeTableViewController: UIViewControllerAnimatedTransitioning {
+    // 告诉系统展现和消失的动画时长
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+        return 3
+    }
+
+    // 专门用于管理modal如何展现和消失的, 无论是展现还是消失都会调用该方法
+    /*
+    注意点: 只要我们实现了这个代理方法, 那么系统就不会再有默认的动画了
+    也就是说默认的modal从下至上的移动系统不帮再帮我们添加了, 所有的动画操作都需要我们自己实现, 包括需要展现的视图也需要我们自己添加到容器视图上(containerView)
+    */
+    // transitionContext: 所有动画需要的东西都保存在上下文中, 换而言之就是可以通过transitionContext获取到我们想要的东西
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        // 1.获取需要弹出视图
+        /*
+        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
+        NJLog(toVC)
+        NJLog(fromVC)
+        */
+        // 通过ToViewKey取出的就是toVC对应的view
+        guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else
+        {
+            return
+        }
+        
+        // 2.将需要弹出的视图添加到containerView上
+        transitionContext.containerView()?.addSubview(toView)
+        
+        // 执行动画
+        toView.transform = CGAffineTransformMakeScale(1.0, 0.0)
+        // 设置锚点
+        toView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.0)
+        UIView.animateWithDuration(2.0, animations: { () -> Void in
+            toView.transform = CGAffineTransformIdentity
+            }) { (_) -> Void in
+                transitionContext.completeTransition(true)
+        }
+    }
 }
