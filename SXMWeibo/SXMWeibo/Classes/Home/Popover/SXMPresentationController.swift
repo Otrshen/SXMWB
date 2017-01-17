@@ -31,10 +31,12 @@ class SXMPresentationController: UIPresentationController {
     
     @objc private func coverBtnClick() {
         SXMLog("")
+        // 让菜单消失
+        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - lazy
-    private var coverButton: UIButton = {
+    private lazy var coverButton: UIButton = {
         let btn = UIButton()
         btn.frame = UIScreen.mainScreen().bounds
         btn.backgroundColor = UIColor.clearColor()

@@ -60,21 +60,27 @@ class HomeTableViewController: BaseTableViewController {
     @objc private func rightBtnClick() {
         SXMLog("")
     }
+    
+    private var isPresent = false
 }
 
 extension HomeTableViewController:UIViewControllerTransitioningDelegate {
 
+    // 该方法用于返回一个负责转场动画的对象
+    // 可以在该对象中控制弹出视图的尺寸等
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return SXMPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
-    // 该方法用于放回一个负责转场如何出现的对象
+    // 该方法用于返回一个负责转场如何出现的对象
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresent = true
         return self
     }
     
     // 如何消失
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresent = false
         return self
     }
 }
@@ -82,7 +88,7 @@ extension HomeTableViewController:UIViewControllerTransitioningDelegate {
 extension HomeTableViewController: UIViewControllerAnimatedTransitioning {
     // 告诉系统展现和消失的动画时长
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 3
+        return 0.5
     }
 
     // 专门用于管理modal如何展现和消失的, 无论是展现还是消失都会调用该方法
@@ -96,26 +102,37 @@ extension HomeTableViewController: UIViewControllerAnimatedTransitioning {
         /*
         let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        NJLog(toVC)
-        NJLog(fromVC)
         */
-        // 通过ToViewKey取出的就是toVC对应的view
-        guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else
-        {
-            return
-        }
-        
-        // 2.将需要弹出的视图添加到containerView上
-        transitionContext.containerView()?.addSubview(toView)
-        
-        // 执行动画
-        toView.transform = CGAffineTransformMakeScale(1.0, 0.0)
-        // 设置锚点
-        toView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.0)
-        UIView.animateWithDuration(2.0, animations: { () -> Void in
-            toView.transform = CGAffineTransformIdentity
-            }) { (_) -> Void in
-                transitionContext.completeTransition(true)
+        if isPresent { // 展现
+            // 通过ToViewKey取出的就是toVC对应的view
+            guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else
+            {
+                return
+            }
+            
+            // 2.将需要弹出的视图添加到containerView上
+            transitionContext.containerView()?.addSubview(toView)
+            
+            // 执行动画
+            toView.transform = CGAffineTransformMakeScale(1.0, 0.0)
+            // 设置锚点
+            toView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.0)
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
+                toView.transform = CGAffineTransformIdentity
+                }) { (_) -> Void in
+                    transitionContext.completeTransition(true)
+            }
+        } else {
+            guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey) else
+            {
+                return
+            }
+            
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
+                fromView.transform = CGAffineTransformMakeScale(1.0, 0.0001)
+                }, completion: { (_) -> Void in
+                    transitionContext.completeTransition(true)
+            })
         }
     }
 }
