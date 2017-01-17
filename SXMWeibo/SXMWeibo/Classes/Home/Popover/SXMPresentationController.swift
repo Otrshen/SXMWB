@@ -9,6 +9,9 @@
 import UIKit
 
 class SXMPresentationController: UIPresentationController {
+    
+    // 菜单尺寸
+    var presentFrame = CGRectZero
 
     /*
     1.如果不自定义转场modal出来的控制器会移除原有的控制器
@@ -22,7 +25,8 @@ class SXMPresentationController: UIPresentationController {
     // 布局转场动画弹出的控件
     override func containerViewWillLayoutSubviews() {
         // 设置弹出视图尺寸
-        presentedView()?.frame = CGRect(x: 100, y: 45, width: 200, height: 200)
+        presentedView()?.frame = presentFrame
+//        presentedView()?.frame = CGRect(x: 100, y: 45, width: 200, height: 200)
         
         // 添加蒙版
         containerView?.insertSubview(coverButton, atIndex: 0)

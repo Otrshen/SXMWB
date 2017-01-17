@@ -19,6 +19,10 @@ class HomeTableViewController: BaseTableViewController {
         }
         
         setupNav()
+        
+        // 注册通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("titleChange"), name: SXMPresentationManagerDidPresented, object: animatorManager)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("titleChange"), name: SXMPresentationManagerDidDismissed, object: animatorManager)
     }
     
     // MARK: - 内部控制方法
@@ -29,16 +33,10 @@ class HomeTableViewController: BaseTableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: Selector("rightBtnClick"))
         
         // 2.添加标题按钮
-        let titleButton = TitleButton()
-        titleButton.setTitle("LarkNan", forState: UIControlState.Normal)
-        titleButton.addTarget(self, action: Selector("titleBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
         navigationItem.titleView = titleButton
     }
     
-    @objc private func titleBtnClick(btn: TitleButton) {
-        // 修改状态
-        btn.selected = !btn.selected
-        
+    @objc private func titleBtnClick(btn: TitleButton) {        
         // 显示菜单
         let sb = UIStoryboard(name: "Popover", bundle: nil)
         guard let menuView = sb.instantiateInitialViewController() else {
@@ -46,7 +44,7 @@ class HomeTableViewController: BaseTableViewController {
         }
         
         // 设置转场代理
-        menuView.transitioningDelegate = self
+        menuView.transitioningDelegate = animatorManager
         // 设置转场动画
         menuView.modalPresentationStyle = UIModalPresentationStyle.Custom
         
@@ -61,78 +59,25 @@ class HomeTableViewController: BaseTableViewController {
         SXMLog("")
     }
     
-    private var isPresent = false
-}
-
-extension HomeTableViewController:UIViewControllerTransitioningDelegate {
-
-    // 该方法用于返回一个负责转场动画的对象
-    // 可以在该对象中控制弹出视图的尺寸等
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return SXMPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    @objc private func titleChange () {
+        titleButton.selected = !titleButton.selected
     }
     
-    // 该方法用于返回一个负责转场如何出现的对象
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        isPresent = true
-        return self
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    // 如何消失
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        isPresent = false
-        return self
-    }
-}
-
-extension HomeTableViewController: UIViewControllerAnimatedTransitioning {
-    // 告诉系统展现和消失的动画时长
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.5
-    }
-
-    // 专门用于管理modal如何展现和消失的, 无论是展现还是消失都会调用该方法
-    /*
-    注意点: 只要我们实现了这个代理方法, 那么系统就不会再有默认的动画了
-    也就是说默认的modal从下至上的移动系统不帮再帮我们添加了, 所有的动画操作都需要我们自己实现, 包括需要展现的视图也需要我们自己添加到容器视图上(containerView)
-    */
-    // transitionContext: 所有动画需要的东西都保存在上下文中, 换而言之就是可以通过transitionContext获取到我们想要的东西
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        // 1.获取需要弹出视图
-        /*
-        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        */
-        if isPresent { // 展现
-            // 通过ToViewKey取出的就是toVC对应的view
-            guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else
-            {
-                return
-            }
-            
-            // 2.将需要弹出的视图添加到containerView上
-            transitionContext.containerView()?.addSubview(toView)
-            
-            // 执行动画
-            toView.transform = CGAffineTransformMakeScale(1.0, 0.0)
-            // 设置锚点
-            toView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.0)
-            UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
-                toView.transform = CGAffineTransformIdentity
-                }) { (_) -> Void in
-                    transitionContext.completeTransition(true)
-            }
-        } else {
-            guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey) else
-            {
-                return
-            }
-            
-            UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
-                fromView.transform = CGAffineTransformMakeScale(1.0, 0.0001)
-                }, completion: { (_) -> Void in
-                    transitionContext.completeTransition(true)
-            })
-        }
-    }
+    // MARK: - lazy
+    private lazy var animatorManager: SXMPresentationManager = {
+        let manager = SXMPresentationManager()
+        manager.presentFrame = CGRect(x: 100, y: 45, width: 200, height: 400)
+        return manager
+    }()
+    
+    private lazy var titleButton: TitleButton = {
+        let btn = TitleButton()
+        btn.setTitle("LarkNan", forState: UIControlState.Normal)
+        btn.addTarget(self, action: Selector("titleBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
+        return btn
+    }()
 }
