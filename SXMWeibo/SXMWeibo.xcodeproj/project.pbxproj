@@ -32,6 +32,8 @@
 		C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */; };
 		C7585BB11E2CF0D800059B69 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BB01E2CF0D800059B69 /* PopoverViewController.swift */; };
 		C7585BB31E2E483000059B69 /* SXMPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BB21E2E483000059B69 /* SXMPresentationManager.swift */; };
+		C7585BB61E2F952200059B69 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7585BB51E2F952200059B69 /* QRCode.storyboard */; };
+		C7585BB81E2F966B00059B69 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BB71E2F966B00059B69 /* QRCodeViewController.swift */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -85,6 +87,8 @@
 		C7585BAE1E2BAC5A00059B69 /* SXMPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXMPresentationController.swift; sourceTree = "<group>"; };
 		C7585BB01E2CF0D800059B69 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		C7585BB21E2E483000059B69 /* SXMPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXMPresentationManager.swift; sourceTree = "<group>"; };
+		C7585BB51E2F952200059B69 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		C7585BB71E2F966B00059B69 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		C7204AC51E2275E500710598 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C7585BB41E2F950E00059B69 /* QRCode */,
 				C7585BAB1E2BA6D000059B69 /* Popover */,
 				C7204AED1E2663A600710598 /* Home.storyboard */,
 				C7204ACC1E22766F00710598 /* HomeTableViewController.swift */,
@@ -252,6 +257,15 @@
 				C7585BB21E2E483000059B69 /* SXMPresentationManager.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		C7585BB41E2F950E00059B69 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				C7585BB51E2F952200059B69 /* QRCode.storyboard */,
+				C7585BB71E2F966B00059B69 /* QRCodeViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		C7E148231E225FFD00BD2E0A = {
@@ -423,6 +437,7 @@
 				C7204AF21E2663B400710598 /* Profile.storyboard in Resources */,
 				C7204AEC1E26639D00710598 /* Discover.storyboard in Resources */,
 				C7204AEE1E2663A600710598 /* Home.storyboard in Resources */,
+				C7585BB61E2F952200059B69 /* QRCode.storyboard in Resources */,
 				C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */,
 				C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */,
 				C7204AF01E2663AE00710598 /* Message.storyboard in Resources */,
@@ -592,6 +607,7 @@
 			files = (
 				C7204AE81E26630500710598 /* BaseTableViewController.swift in Sources */,
 				C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */,
+				C7585BB81E2F966B00059B69 /* QRCodeViewController.swift in Sources */,
 				C7585BB11E2CF0D800059B69 /* PopoverViewController.swift in Sources */,
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
 				C7585BB31E2E483000059B69 /* SXMPresentationManager.swift in Sources */,

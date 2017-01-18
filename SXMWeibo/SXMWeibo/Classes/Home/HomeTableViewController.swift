@@ -36,7 +36,23 @@ class HomeTableViewController: BaseTableViewController {
         navigationItem.titleView = titleButton
     }
     
-    @objc private func titleBtnClick(btn: TitleButton) {        
+    @objc private func leftBtnClick() {
+        SXMLog("")
+    }
+    
+    // 二维码
+    @objc private func rightBtnClick() {
+        let sb = UIStoryboard(name: "QRCode", bundle: nil)
+        let vc = sb.instantiateInitialViewController()!
+        
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func titleChange () {
+        titleButton.selected = !titleButton.selected
+    }
+    
+    @objc private func titleBtnClick(btn: TitleButton) {
         // 显示菜单
         let sb = UIStoryboard(name: "Popover", bundle: nil)
         guard let menuView = sb.instantiateInitialViewController() else {
@@ -49,18 +65,6 @@ class HomeTableViewController: BaseTableViewController {
         menuView.modalPresentationStyle = UIModalPresentationStyle.Custom
         
         presentViewController(menuView, animated: true, completion: nil)
-    }
-    
-    @objc private func leftBtnClick() {
-        SXMLog("")
-    }
-    
-    @objc private func rightBtnClick() {
-        SXMLog("")
-    }
-    
-    @objc private func titleChange () {
-        titleButton.selected = !titleButton.selected
     }
     
     deinit {
