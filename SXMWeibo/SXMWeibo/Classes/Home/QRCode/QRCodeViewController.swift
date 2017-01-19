@@ -58,6 +58,9 @@ class QRCodeViewController: UIViewController {
         // 添加预览图层
         view.layer.insertSublayer(previewLayer, atIndex: 0)
         previewLayer.frame = view.bounds
+        // 添加容器图层给描边用
+        view.layer.addSublayer(containerLayer)
+        containerLayer.frame = view.bounds
         // 开始扫描
         session.startRunning()
     }
@@ -99,12 +102,71 @@ class QRCodeViewController: UIViewController {
     // 预览图层
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
     
+    // 保存描边的图层
+    private lazy var containerLayer: CALayer = CALayer()
 }
 
 extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         SXMLog(metadataObjects.last?.stringValue)
+        // 显示结果
         customLabel.text = metadataObjects.last?.stringValue
+        
+        clearLayers()
+        
+        guard let metadata = metadataObjects.last as? AVMetadataObject else {
+            return
+        }
+        
+        // 描边的数据
+        let objc = previewLayer.transformedMetadataObjectForMetadataObject(metadata)
+        // 对二维码进行描边
+        drawLines(objc as! AVMetadataMachineReadableCodeObject)
+    }
+    
+    private func drawLines(objc: AVMetadataMachineReadableCodeObject) {
+        
+        // 安全校验
+        guard let array = objc.corners else {
+            return
+        }
+        
+        // 创建图层
+        let layer = CAShapeLayer()
+        layer.lineWidth = 5
+        layer.strokeColor = UIColor.greenColor().CGColor
+        layer.fillColor = UIColor.clearColor().CGColor
+        
+        // 绘制矩形
+        let path = UIBezierPath()
+        var point = CGPointZero
+        var index = 0
+        CGPointMakeWithDictionaryRepresentation((array[index++] as! CFDictionary), &point)
+        
+        // 将起点移动到某个点
+        path.moveToPoint(point)
+        
+        while index < array.count {
+            CGPointMakeWithDictionaryRepresentation((array[index++] as! CFDictionary), &point)
+            path.addLineToPoint(point)
+        }
+        path.closePath()
+        
+        layer.path = path.CGPath
+        
+        // 将图层添加到界面
+        containerLayer.addSublayer(layer)
+    }
+    
+    // 清除描边
+    private func clearLayers() {
+        guard let subLayers = containerLayer.sublayers else {
+            return
+        }
+        
+        for layer in subLayers {
+            layer.removeFromSuperlayer()
+        }
     }
 }
 
