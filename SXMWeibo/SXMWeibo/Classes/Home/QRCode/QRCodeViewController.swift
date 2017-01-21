@@ -226,7 +226,7 @@ extension QRCodeViewController: UITabBarDelegate {
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         SXMLog(item.tag)
         
-        containerHeightConstraint.constant = item.tag == 1 ? 150 : 300
+        containerHeightConstraint.constant = item.tag == 1 ? 100 : 200
         view.layoutIfNeeded()
         
         // 移除动画
