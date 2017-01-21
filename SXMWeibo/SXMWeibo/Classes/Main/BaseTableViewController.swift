@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
     
-    var isLogin = true
+    var isLogin = false
     var visitorView: VisitorView?
     
     override func loadView() {
@@ -29,7 +29,10 @@ class BaseTableViewController: UITableViewController {
     }
     
     @objc private func loginBtnClick(btn: UIButton) {
-        SXMLog("")
+        let sb = UIStoryboard(name: "OAuth", bundle: nil)
+        let vc = sb.instantiateInitialViewController()!
+        
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     @objc private func registerBtnClick(btn: UIButton) {
