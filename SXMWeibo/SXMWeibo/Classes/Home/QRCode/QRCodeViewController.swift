@@ -80,7 +80,16 @@ class QRCodeViewController: UIViewController {
         }
     }
 
+    // 打开相册
     @IBAction func photoBtnClick(sender: AnyObject) {
+        // 判断是否可以打开相册
+        if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            return
+        }
+        // 弹出相册
+        let imagePickerVC = UIImagePickerController()
+        imagePickerVC.delegate = self
+        presentViewController(imagePickerVC, animated: true, completion: nil)
     }
 
     @IBAction func closeBtnClick(sender: AnyObject) {
@@ -125,6 +134,30 @@ class QRCodeViewController: UIViewController {
     private lazy var containerLayer: CALayer = CALayer()
 }
 
+// 获取图片代理
+extension QRCodeViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    // 如实现该方法，选中图片时系统将不会自动关闭controller
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        SXMLog("info:\(info)")
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+        
+        let ciImage = CIImage(image: image)!
+        // 从图片中读取二维码数据
+        // 创建一个探测器
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy : CIDetectorAccuracyHigh])
+        // 探测数据
+        let results = detector.featuresInImage(ciImage)
+        for result in results {
+            SXMLog((result as! CIQRCodeFeature).messageString)
+        }
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+// 二维码的代理
 extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         SXMLog(metadataObjects.last?.stringValue)
