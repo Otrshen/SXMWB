@@ -112,6 +112,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerHeightConstraint" destination="xUU-os-eJG" id="eae-5X-l20"/>
+                        <outlet property="customContainerView" destination="RoF-cY-wf1" id="W3c-qF-cdP"/>
                         <outlet property="customLabel" destination="xDp-KT-B3g" id="mNY-ls-rdq"/>
                         <outlet property="customTabbar" destination="mb8-NI-PHI" id="vqX-Mh-2BJ"/>
                         <outlet property="scanLineConstraint" destination="r60-ft-BDw" id="1Vn-0b-x0Y"/>

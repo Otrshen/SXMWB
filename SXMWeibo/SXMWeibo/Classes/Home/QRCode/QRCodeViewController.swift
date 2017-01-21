@@ -13,6 +13,8 @@ class QRCodeViewController: UIViewController {
     // 二维码结果文本
     @IBOutlet weak var customLabel: UILabel!
     @IBOutlet weak var customTabbar: UITabBar!
+    // 扫描的容器
+    @IBOutlet weak var customContainerView: UIView!
     // 容器视图的高度约束
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     // 冲击波视图
@@ -97,7 +99,24 @@ class QRCodeViewController: UIViewController {
     private lazy var session: AVCaptureSession = AVCaptureSession()
     
     // 输出对象
-    private lazy var output: AVCaptureMetadataOutput = AVCaptureMetadataOutput()
+    private lazy var output: AVCaptureMetadataOutput = {
+        let out = AVCaptureMetadataOutput()
+        // 设置输出对象感兴趣的范围，以横屏的左上角为参照物
+//        out.rectOfInterest = CGRect(x: 0, y: 0, width: 1, height: 1)
+        
+        // 获取屏幕的frame
+        let rect = self.view.frame
+        // 获取扫描容器的frame
+        let containerRect = self.customContainerView.frame
+        
+        let x = containerRect.origin.y / rect.height
+        let y = containerRect.origin.x / rect.width
+        let width = containerRect.height / rect.height
+        let height = containerRect.width / rect.width
+        out.rectOfInterest = CGRect(x: x, y: y, width: width, height: height)
+        
+        return out
+    }()
     
     // 预览图层
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
