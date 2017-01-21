@@ -24,3 +24,28 @@ class OAuthViewController: UIViewController {
         customWebView.loadRequest(request)
     }
 }
+
+extension OAuthViewController: UIWebViewDelegate {
+    // 每次请求都会调用 false：不允许请求 true：允许请求
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        SXMLog(request)
+        // 判断是否是授权回调页
+        guard let urlStr = request.URL?.absoluteString else {
+            return false
+        }
+        
+        if !urlStr.hasPrefix("http://www.520it.com") {
+            return true
+        }
+        
+        let key = "code="
+        // 判断回调地址是否包含code
+        if urlStr.containsString(key) {
+            let code = request.URL!.query?.substringFromIndex(key.endIndex)
+            SXMLog(code!)
+            return false
+        }
+        
+        return false
+    }
+}
