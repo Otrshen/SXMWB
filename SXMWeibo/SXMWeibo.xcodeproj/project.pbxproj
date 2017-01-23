@@ -417,6 +417,7 @@
 					};
 					C7E1483F1E225FFD00BD2E0A = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = W8PVK52JS2;
 						TestTargetID = C7E1482B1E225FFD00BD2E0A;
 					};
 					C7E1484A1E225FFD00BD2E0A = {
@@ -716,6 +717,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -753,6 +755,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -765,6 +768,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = W8PVK52JS2;
 				INFOPLIST_FILE = SXMWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -781,6 +785,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = W8PVK52JS2;
 				INFOPLIST_FILE = SXMWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -793,12 +798,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0C68B05D66BABAC8C0F6F2E /* Pods-SXMWeiboTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = W8PVK52JS2;
 				INFOPLIST_FILE = SXMWeiboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shenming.SXMWeiboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SXMWeibo.app/SXMWeibo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SXM微博.app/SXM微博";
 			};
 			name = Debug;
 		};
@@ -806,12 +811,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B32126BDC2E22B16E127289 /* Pods-SXMWeiboTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = W8PVK52JS2;
 				INFOPLIST_FILE = SXMWeiboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shenming.SXMWeiboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SXMWeibo.app/SXMWeibo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SXM微博.app/SXM微博";
 			};
 			name = Release;
 		};
