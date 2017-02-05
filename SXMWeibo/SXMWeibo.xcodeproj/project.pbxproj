@@ -41,6 +41,7 @@
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
 		C7E148501E225FFD00BD2E0A /* SXMWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1484F1E225FFD00BD2E0A /* SXMWeiboUITests.swift */; };
+		C7FB10401E4703F00052503C /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB103F1E4703F00052503C /* NetworkTools.swift */; };
 		F3BECB2E542DEA2EC1E4E2D3 /* Pods_SXMWeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3689C8003730F7D95B7265 /* Pods_SXMWeiboUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		C7E1484B1E225FFD00BD2E0A /* SXMWeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SXMWeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1484F1E225FFD00BD2E0A /* SXMWeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXMWeiboUITests.swift; sourceTree = "<group>"; };
 		C7E148511E225FFD00BD2E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7FB103F1E4703F00052503C /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		D5BFD20A1C256FBF43F8C7D9 /* Pods-SXMWeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeiboUITests/Pods-SXMWeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC6ACC146B8CD2470843BD53 /* Pods_SXMWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SXMWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505A53A5AB09942BEBCD03B /* Pods-SXMWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeibo/Pods-SXMWeibo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				C7204AD91E2518AF00710598 /* UIButton+Extension.swift */,
 				C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */,
 				C7585BA91E2B844F00059B69 /* TitleButton.swift */,
+				C7FB103F1E4703F00052503C /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */,
 				C7585BB81E2F966B00059B69 /* QRCodeViewController.swift in Sources */,
 				C7585BB11E2CF0D800059B69 /* PopoverViewController.swift in Sources */,
+				C7FB10401E4703F00052503C /* NetworkTools.swift in Sources */,
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
 				C7585BB31E2E483000059B69 /* SXMPresentationManager.swift in Sources */,
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,

@@ -42,10 +42,33 @@ extension OAuthViewController: UIWebViewDelegate {
         // 判断回调地址是否包含code
         if urlStr.containsString(key) {
             let code = request.URL!.query?.substringFromIndex(key.endIndex)
-            SXMLog(code!)
+
+            loadAccessToken(code)
             return false
         }
         
         return false
+    }
+    
+    // 换取accessToken
+    private func loadAccessToken(codeStr: String?) {
+        guard let code = codeStr else {
+            return
+        }
+        
+        // 准备请求路径
+        let path = "oauth2/access_token"
+        // 构建参数
+        let parameters = ["client_id" : "528023216", "client_secret" : "0c0ef1c5c08f7e22d06aa9cd985fedbe", "grant_type" : "authorization_code", "code" : code, "redirect_uri" : "http://www.520it.com"]
+        
+        NetworkTools.shareInstance.POST(path, parameters: parameters, success: { (task: NSURLSessionDataTask?, dictStr: AnyObject?) -> Void in
+            guard let dict = dictStr else {
+                return
+            }
+            SXMLog(dict)
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                SXMLog(error)
+        }
+        
     }
 }

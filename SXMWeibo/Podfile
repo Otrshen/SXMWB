@@ -4,6 +4,7 @@ target 'SXMWeibo' do
   use_frameworks!
 
   pod 'QorumLogs', '0.2'
+  pod 'AFNetworking'
 
   target 'SXMWeiboTests' do
     inherit! :search_paths
