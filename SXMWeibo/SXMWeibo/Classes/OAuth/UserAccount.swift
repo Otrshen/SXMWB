@@ -11,7 +11,14 @@ import UIKit
 class UserAccount: NSObject, NSCoding {
 
     var access_token: String?
-    var expires_in: Int = 0
+    // 从授权开始 多少秒之后过期时间
+    var expires_in: Int = 0 {
+        didSet {
+            expires_Date = NSDate(timeIntervalSinceNow: NSTimeInterval(expires_in))
+        }
+    }
+    // 真正过期时间
+    var expires_Date: NSDate?
     var uid: String?
     
     init(dict: [String: AnyObject]) {
@@ -49,12 +56,29 @@ class UserAccount: NSObject, NSCoding {
     class func loadUserAccount() -> UserAccount? {
         
         if UserAccount.account != nil {
-            return UserAccount.account
+            return nil
         }
         
         guard let account = NSKeyedUnarchiver.unarchiveObjectWithFile(UserAccount.filePath) as? UserAccount else {
             return UserAccount.account
         }
+        
+        // 校验是否过期了
+        /*
+        guard let date = account.expires_Date else {
+            return nil
+        }
+        if date.compare(NSDate()) == NSComparisonResult.OrderedAscending {
+            return nil
+        }
+        */
+        SXMLog(account.expires_Date)
+        SXMLog(NSDate())
+        guard let date = account.expires_Date where date.compare(NSDate()) == NSComparisonResult.OrderedAscending else {
+            SXMLog("过期了")
+            return nil
+        }
+        
         UserAccount.account = account
         
         return UserAccount.account
@@ -70,12 +94,14 @@ class UserAccount: NSObject, NSCoding {
         aCoder.encodeObject(access_token, forKey: "access_token")
         aCoder.encodeInteger(expires_in, forKey: "expires_in")
         aCoder.encodeObject(uid, forKey: "uid")
+        aCoder.encodeObject(expires_Date, forKey: "expires_Date")
     }
     
     required init?(coder aDecoder: NSCoder) {
         self.access_token = aDecoder.decodeObjectForKey("access_token") as? String
         self.expires_in = aDecoder.decodeIntegerForKey("expires_in") as Int
         self.uid = aDecoder.decodeObjectForKey("uid") as? String
+        self.expires_Date = aDecoder.decodeObjectForKey("expires_Date") as? NSDate
     }
 
 }
