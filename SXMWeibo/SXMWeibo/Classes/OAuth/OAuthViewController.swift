@@ -62,10 +62,22 @@ extension OAuthViewController: UIWebViewDelegate {
         let parameters = ["client_id" : "528023216", "client_secret" : "0c0ef1c5c08f7e22d06aa9cd985fedbe", "grant_type" : "authorization_code", "code" : code, "redirect_uri" : "http://www.520it.com"]
         
         NetworkTools.shareInstance.POST(path, parameters: parameters, success: { (task: NSURLSessionDataTask?, dictStr: AnyObject?) -> Void in
-            guard let dict = dictStr else {
+            guard let objc = dictStr else {
                 return
             }
-            SXMLog(dict)
+            
+            /* 
+            {
+            "access_token" = "2.00BsOWQD0UxWjZebf57b3dcaXApzGC";
+            "expires_in" = 157679999;
+            "remind_in" = 157679999;
+            uid = 2992503533;
+            }
+            */
+
+            let account = UserAccount(dict: objc as! [String : AnyObject])
+            SXMLog(account.saveAccount())
+            
             }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
                 SXMLog(error)
         }

@@ -26,6 +26,7 @@
 		C7204AF21E2663B400710598 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF11E2663B400710598 /* Profile.storyboard */; };
 		C7204AF41E26671C00710598 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AF31E26671C00710598 /* VisitorView.swift */; };
 		C7204AF61E26672E00710598 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF51E26672E00710598 /* VisitorView.xib */; };
+		C73CC5E91E4711150086EAE2 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73CC5E81E4711150086EAE2 /* UserAccount.swift */; };
 		C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */; };
 		C7585BAA1E2B844F00059B69 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA91E2B844F00059B69 /* TitleButton.swift */; };
 		C7585BAD1E2BA6E900059B69 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7585BAC1E2BA6E900059B69 /* Popover.storyboard */; };
@@ -85,6 +86,7 @@
 		C7204AF11E2663B400710598 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C7204AF31E26671C00710598 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		C7204AF51E26672E00710598 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		C73CC5E81E4711150086EAE2 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		C7585BA91E2B844F00059B69 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		C7585BAC1E2BA6E900059B69 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				C77346071E33728200E64598 /* OAuthViewController.swift */,
 				C77346091E33728E00E64598 /* OAuth.storyboard */,
+				C73CC5E81E4711150086EAE2 /* UserAccount.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				C7204AE81E26630500710598 /* BaseTableViewController.swift in Sources */,
 				C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */,
 				C7585BB81E2F966B00059B69 /* QRCodeViewController.swift in Sources */,
+				C73CC5E91E4711150086EAE2 /* UserAccount.swift in Sources */,
 				C7585BB11E2CF0D800059B69 /* PopoverViewController.swift in Sources */,
 				C7FB10401E4703F00052503C /* NetworkTools.swift in Sources */,
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
