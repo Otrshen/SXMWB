@@ -28,22 +28,22 @@ class UserAccount: NSObject, NSCoding {
     }
     
     override var description: String {
-        return "abc"
+        let property = ["access_token", "expires_in", "uid"]
+        let dict = dictionaryWithValuesForKeys(property)
+        return "\(dict)"
     }
     
     // MRAK: - 外部控制方法
     // 归档
     func saveAccount() -> Bool {
-        // 缓存路径
-        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!
-        let filePath = (path as NSString).stringByAppendingPathComponent("useraccount.plist")
-        SXMLog(filePath)
         // 归档
-        return NSKeyedArchiver.archiveRootObject(self, toFile: filePath)
+        return NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.filePath)
     }
     
     // 保存授权模型
     static var account: UserAccount?
+    // 归档缓存路径
+    static let filePath: String = "useraccount.plist".cacheDir()
     
     // 解
     class func loadUserAccount() -> UserAccount? {
@@ -52,10 +52,7 @@ class UserAccount: NSObject, NSCoding {
             return UserAccount.account
         }
         
-        // 缓存路径
-        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!
-        let filePath = (path as NSString).stringByAppendingPathComponent("useraccount.plist")
-        guard let account = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount else {
+        guard let account = NSKeyedUnarchiver.unarchiveObjectWithFile(UserAccount.filePath) as? UserAccount else {
             return UserAccount.account
         }
         UserAccount.account = account

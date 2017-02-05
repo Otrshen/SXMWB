@@ -8,10 +8,6 @@
 
 import UIKit
 
-// 通知
-let SXMPresentationManagerDidPresented = "SXMPresentationManagerDidPresented"
-let SXMPresentationManagerDidDismissed = "SXMPresentationManagerDidDismissed"
-
 class SXMPresentationManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
     private var isPresent = false

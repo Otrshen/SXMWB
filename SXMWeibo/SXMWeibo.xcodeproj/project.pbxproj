@@ -27,6 +27,8 @@
 		C7204AF41E26671C00710598 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7204AF31E26671C00710598 /* VisitorView.swift */; };
 		C7204AF61E26672E00710598 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7204AF51E26672E00710598 /* VisitorView.xib */; };
 		C73CC5E91E4711150086EAE2 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73CC5E81E4711150086EAE2 /* UserAccount.swift */; };
+		C73CC5EB1E4722AB0086EAE2 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73CC5EA1E4722AB0086EAE2 /* Common.swift */; };
+		C73CC5ED1E4725AA0086EAE2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73CC5EC1E4725AA0086EAE2 /* String+Extension.swift */; };
 		C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */; };
 		C7585BAA1E2B844F00059B69 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BA91E2B844F00059B69 /* TitleButton.swift */; };
 		C7585BAD1E2BA6E900059B69 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7585BAC1E2BA6E900059B69 /* Popover.storyboard */; };
@@ -87,6 +89,8 @@
 		C7204AF31E26671C00710598 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		C7204AF51E26672E00710598 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		C73CC5E81E4711150086EAE2 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		C73CC5EA1E4722AB0086EAE2 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C73CC5EC1E4725AA0086EAE2 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		C7585BA91E2B844F00059B69 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		C7585BAC1E2BA6E900059B69 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */,
 				C7585BA91E2B844F00059B69 /* TitleButton.swift */,
 				C7FB103F1E4703F00052503C /* NetworkTools.swift */,
+				C73CC5EA1E4722AB0086EAE2 /* Common.swift */,
+				C73CC5EC1E4725AA0086EAE2 /* String+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -643,7 +649,9 @@
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
 				C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */,
+				C73CC5ED1E4725AA0086EAE2 /* String+Extension.swift in Sources */,
 				C77346081E33728200E64598 /* OAuthViewController.swift in Sources */,
+				C73CC5EB1E4722AB0086EAE2 /* Common.swift in Sources */,
 				C7204ACF1E22769600710598 /* DiscoverTableViewController.swift in Sources */,
 				C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */,
 				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,

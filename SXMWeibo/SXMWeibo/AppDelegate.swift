@@ -24,12 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
+
         
         SXMLog(UserAccount.loadUserAccount())
+
         
-        SXMLog(UserAccount.loadUserAccount())
-        SXMLog(UserAccount.loadUserAccount())
-        SXMLog(UserAccount.loadUserAccount())
         
         return true
     }

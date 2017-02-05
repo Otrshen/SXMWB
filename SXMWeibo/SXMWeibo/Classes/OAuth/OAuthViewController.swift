@@ -16,7 +16,7 @@ class OAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=528023216&redirect_uri=http://www.520it.com"
+        let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=\(WB_App_key)&redirect_uri=\(WB_Redirect_uri)"
         guard let url = NSURL(string: urlStr) else {
             return
         }
@@ -34,14 +34,17 @@ extension OAuthViewController: UIWebViewDelegate {
             return false
         }
         
-        if !urlStr.hasPrefix("http://www.520it.com") {
+        if !urlStr.hasPrefix(WB_Redirect_uri) {
             return true
         }
         
         let key = "code="
+        guard let str = request.URL!.query else {
+            return false
+        }
         // 判断回调地址是否包含code
-        if urlStr.containsString(key) {
-            let code = request.URL!.query?.substringFromIndex(key.endIndex)
+        if str.hasPrefix(key) {
+            let code = str.substringFromIndex(key.endIndex)
 
             loadAccessToken(code)
             return false
@@ -59,7 +62,7 @@ extension OAuthViewController: UIWebViewDelegate {
         // 准备请求路径
         let path = "oauth2/access_token"
         // 构建参数
-        let parameters = ["client_id" : "528023216", "client_secret" : "0c0ef1c5c08f7e22d06aa9cd985fedbe", "grant_type" : "authorization_code", "code" : code, "redirect_uri" : "http://www.520it.com"]
+        let parameters = ["client_id" : WB_App_key, "client_secret" : WB_App_Secret, "grant_type" : "authorization_code", "code" : code, "redirect_uri" : WB_Redirect_uri]
         
         NetworkTools.shareInstance.POST(path, parameters: parameters, success: { (task: NSURLSessionDataTask?, dictStr: AnyObject?) -> Void in
             guard let objc = dictStr else {
