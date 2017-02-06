@@ -20,7 +20,7 @@ class TitleButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setupUI()
+        setupUI() 
     }
 
     private func setupUI() {
