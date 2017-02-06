@@ -18,7 +18,7 @@ class NetworkTools: AFHTTPSessionManager {
         
         let instance = NetworkTools(baseURL: baseURL, sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         
-        instance.responseSerializer.acceptableContentTypes = NSSet(object: "text/plain") as? Set
+        instance.responseSerializer.acceptableContentTypes = NSSet(objects:"application/json", "text/plain", "text/javascript", "text/json") as? Set
         return instance
     }()
     

@@ -80,7 +80,8 @@ class HomeTableViewController: BaseTableViewController {
     
     private lazy var titleButton: TitleButton = {
         let btn = TitleButton()
-        btn.setTitle("LarkNan", forState: UIControlState.Normal)
+        let title = UserAccount.loadUserAccount()?.screen_name
+        btn.setTitle(title, forState: UIControlState.Normal)
         btn.addTarget(self, action: Selector("titleBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()

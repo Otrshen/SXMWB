@@ -79,7 +79,10 @@ extension OAuthViewController: UIWebViewDelegate {
             */
 
             let account = UserAccount(dict: objc as! [String : AnyObject])
-            SXMLog(account.saveAccount())
+            
+            account.loadUserInfo({ (account, error) -> () in
+                account?.saveAccount()
+            })
             
             }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
                 SXMLog(error)
