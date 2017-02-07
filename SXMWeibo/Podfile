@@ -5,6 +5,8 @@ target 'SXMWeibo' do
 
   pod 'QorumLogs', '0.2'
   pod 'AFNetworking'
+  pod 'SVProgressHUD'
+  pod 'SDWebImage'
 
   target 'SXMWeiboTests' do
     inherit! :search_paths

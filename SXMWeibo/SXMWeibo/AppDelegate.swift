@@ -17,10 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        window?.backgroundColor = UIColor.whiteColor()
-//        window?.rootViewController = MainViewController()
-//        window?.makeKeyAndVisible()
+        let sb = UIStoryboard(name: "Welcome", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()

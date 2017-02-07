@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OAuthViewController: UIViewController {
 
@@ -26,6 +27,17 @@ class OAuthViewController: UIViewController {
 }
 
 extension OAuthViewController: UIWebViewDelegate {
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        // 显示提醒
+        SVProgressHUD.showInfoWithStatus("加载中...", maskType: SVProgressHUDMaskType.Black)
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        // 关闭提醒
+        SVProgressHUD.dismiss()
+    }
+    
     // 每次请求都会调用 false：不允许请求 true：允许请求
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         SXMLog(request)
