@@ -42,6 +42,8 @@
 		C773460A1E33728E00E64598 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77346091E33728E00E64598 /* OAuth.storyboard */; };
 		C7C3B3D41E49FDFF0073CCAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */; };
 		C7C3B3D81E49FE260073CCAA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */; };
+		C7C3B3DA1E4B3F510073CCAA /* NewfeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */; };
+		C7C3B3DC1E4B3F630073CCAA /* Newfeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C3B3DB1E4B3F630073CCAA /* Newfeature.storyboard */; };
 		C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */; };
 		C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E148361E225FFD00BD2E0A /* Assets.xcassets */; };
 		C7E148451E225FFD00BD2E0A /* SXMWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E148441E225FFD00BD2E0A /* SXMWeiboTests.swift */; };
@@ -106,6 +108,8 @@
 		C77346091E33728E00E64598 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureViewController.swift; sourceTree = "<group>"; };
+		C7C3B3DB1E4B3F630073CCAA /* Newfeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Newfeature.storyboard; sourceTree = "<group>"; };
 		C7E1482C1E225FFD00BD2E0A /* SXM微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SXM微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1482F1E225FFD00BD2E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E148361E225FFD00BD2E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 			children = (
 				C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */,
 				C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */,
+				C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */,
+				C7C3B3DB1E4B3F630073CCAA /* Newfeature.storyboard */,
 			);
 			path = Newfeature;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				C7585BB61E2F952200059B69 /* QRCode.storyboard in Resources */,
 				C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */,
 				C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */,
+				C7C3B3DC1E4B3F630073CCAA /* Newfeature.storyboard in Resources */,
 				C7204AF01E2663AE00710598 /* Message.storyboard in Resources */,
 				C7585BAD1E2BA6E900059B69 /* Popover.storyboard in Resources */,
 				C7204AF61E26672E00710598 /* VisitorView.xib in Resources */,
@@ -674,6 +681,7 @@
 				C7204AF41E26671C00710598 /* VisitorView.swift in Sources */,
 				C7204ACB1E22764100710598 /* MainViewController.swift in Sources */,
 				C7585BAA1E2B844F00059B69 /* TitleButton.swift in Sources */,
+				C7C3B3DA1E4B3F510073CCAA /* NewfeatureViewController.swift in Sources */,
 				C7204AD81E23BEE600710598 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let sb = UIStoryboard(name: "Welcome", bundle: nil)
+        let sb = UIStoryboard(name: "Newfeature", bundle: nil)
         let vc = sb.instantiateInitialViewController()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)

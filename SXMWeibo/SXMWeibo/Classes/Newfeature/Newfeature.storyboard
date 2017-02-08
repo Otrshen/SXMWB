@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="heq-0r-M42">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Newfeature View Controller-->
+        <scene sceneID="P9L-WC-NNa">
+            <objects>
+                <viewController id="heq-0r-M42" customClass="NewfeatureViewController" customModule="SXM微博" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T7B-Wg-3RO"/>
+                        <viewControllerLayoutGuide type="bottom" id="pX8-do-hTA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bh7-HN-yiq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0sJ-Ii-9oa">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.5070252864" green="1" blue="0.58605544099999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="xX6-S6-J6j" customClass="SXMNewfeatureLayout" customModule="SXM微博" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newfeatureCell" id="Itk-uV-bnV" customClass="SXMNewfeatureCell" customModule="SXM微博" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="heq-0r-M42" id="5Ea-Jw-Vtr"/>
+                                    <outlet property="delegate" destination="heq-0r-M42" id="82s-PO-bxB"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sJ-Ii-9oa" firstAttribute="top" secondItem="Bh7-HN-yiq" secondAttribute="top" id="3Zf-wH-wfK"/>
+                            <constraint firstItem="0sJ-Ii-9oa" firstAttribute="leading" secondItem="Bh7-HN-yiq" secondAttribute="leading" id="WoQ-Un-VZu"/>
+                            <constraint firstItem="pX8-do-hTA" firstAttribute="top" secondItem="0sJ-Ii-9oa" secondAttribute="bottom" id="opD-bm-Kol"/>
+                            <constraint firstAttribute="trailing" secondItem="0sJ-Ii-9oa" secondAttribute="trailing" id="xTK-Xb-VAa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u1w-uu-tjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="522" y="302"/>
+        </scene>
+    </scenes>
+</document>
