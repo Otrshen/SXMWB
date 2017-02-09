@@ -29,9 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.orangeColor()
 
         
-        SXMLog(UserAccount.loadUserAccount())
-
-        
+//        SXMLog(UserAccount.loadUserAccount())
+        SXMLog(isNewVersion())
         
         return true
     }
@@ -54,6 +53,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
 
+    }
+}
+
+extension AppDelegate {
+    /**
+     判断是否有新版本
+     */
+    private func isNewVersion() -> Bool {
+        // 加载info.list
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let sanboxVersion = (defaults.objectForKey("oldVersion") as? String) ?? "0.0"
+        if currentVersion.compare(sanboxVersion) == NSComparisonResult.OrderedDescending {
+            SXMLog("有现版本")
+            // 如果有新版本，更新本地版本号
+            
+            defaults.setObject(currentVersion, forKey: "oldVersion")
+            return true
+        }
+        SXMLog("没有新版本")
+        return false
     }
 }
 
