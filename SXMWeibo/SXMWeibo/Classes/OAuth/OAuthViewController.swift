@@ -24,6 +24,15 @@ class OAuthViewController: UIViewController {
         let request = NSURLRequest(URL: url)
         customWebView.loadRequest(request)
     }
+    
+    @IBAction func closeButtonClick() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func autoButtonClick() {
+        let jsStr = "document.getElementById('userId').value = '569818710@qq.com';"
+        customWebView.stringByEvaluatingJavaScriptFromString(jsStr)
+    }
 }
 
 extension OAuthViewController: UIWebViewDelegate {
@@ -93,7 +102,17 @@ extension OAuthViewController: UIWebViewDelegate {
             let account = UserAccount(dict: objc as! [String : AnyObject])
             
             account.loadUserInfo({ (account, error) -> () in
+                // 保存用户信息
                 account?.saveAccount()
+                
+                // 跳转到欢迎界面
+                /*
+                let vc = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()
+                UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+                */
+                NSNotificationCenter.defaultCenter().postNotificationName(SXMSwichRootViewController, object: false)
+                
+                self.closeButtonClick()
             })
             
             }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in

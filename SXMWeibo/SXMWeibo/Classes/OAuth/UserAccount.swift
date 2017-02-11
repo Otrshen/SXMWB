@@ -60,7 +60,7 @@ class UserAccount: NSObject, NSCoding {
     
     // 解
     class func loadUserAccount() -> UserAccount? {
-        
+        SXMLog("归档路径：\(UserAccount.filePath)")
         if UserAccount.account != nil {
             return UserAccount.account 
         }

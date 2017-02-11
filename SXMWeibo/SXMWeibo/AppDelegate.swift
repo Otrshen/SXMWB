@@ -17,22 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let sb = UIStoryboard(name: "Newfeature", bundle: nil)
-        let vc = sb.instantiateInitialViewController()
+        // 设置外观
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        
+        // 注册监听
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("changeRootViewController:"), name: SXMSwichRootViewController, object: nil)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        window?.rootViewController = vc
+        window?.rootViewController = defaultViewController()
         window?.makeKeyAndVisible()
-        
-        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
-        UITabBar.appearance().tintColor = UIColor.orangeColor()
 
         
-//        SXMLog(UserAccount.loadUserAccount())
+        SXMLog(UserAccount.loadUserAccount())
         SXMLog(isNewVersion())
         
         return true
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -57,6 +62,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    
+    /**
+     切换根控制器
+     */
+    func changeRootViewController(notice: NSNotification) {
+        if notice.object as! Bool {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            window?.rootViewController = sb.instantiateInitialViewController()
+        } else {
+            let sb = UIStoryboard(name: "Welcome", bundle: nil)
+            window?.rootViewController = sb.instantiateInitialViewController()
+        }
+    }
+    
+    /**
+        返回默认界面
+     */
+    private func defaultViewController() -> UIViewController {
+        // 判断是否登录
+        if UserAccount.isLogin() {
+            
+            if isNewVersion() {
+                return UIStoryboard(name: "Newfeature", bundle: nil).instantiateInitialViewController()!
+            } else {
+                return UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()!
+            }
+        }
+        
+        // 没有登录
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        return sb.instantiateInitialViewController()!
+    }
+    
     /**
      判断是否有新版本
      */

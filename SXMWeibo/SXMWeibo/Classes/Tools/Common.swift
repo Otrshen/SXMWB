@@ -19,3 +19,7 @@ let WB_Redirect_uri = "http://www.520it.com"
 let SXMPresentationManagerDidPresented = "SXMPresentationManagerDidPresented"
 // 自定义转场消失
 let SXMPresentationManagerDidDismissed = "SXMPresentationManagerDidDismissed"
+/**
+    切换根控制器的通知
+*/
+let SXMSwichRootViewController = "SXMSwichRootViewController"

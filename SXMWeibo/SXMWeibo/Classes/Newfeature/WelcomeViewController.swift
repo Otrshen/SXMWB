@@ -41,7 +41,11 @@ class WelcomeViewController: UIViewController {
                 UIView.animateWithDuration(1.5, animations: { () -> Void in
                     self.titleLabel.alpha = 1.0
                     }, completion: { (_) -> Void in
-                        SXMLog("")
+                        /*
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+                        */
+                    NSNotificationCenter.defaultCenter().postNotificationName(SXMSwichRootViewController, object: true)
                 })
         }
     }

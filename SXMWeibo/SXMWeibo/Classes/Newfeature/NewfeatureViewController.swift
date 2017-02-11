@@ -113,7 +113,11 @@ class SXMNewfeatureCell: UICollectionViewCell {
     }
     
     @objc private func startBtnClick() {
-        SXMLog("")
+        /*
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+        */
+        NSNotificationCenter.defaultCenter().postNotificationName(SXMSwichRootViewController, object: true)
     }
     
     // MARK: - lazy
