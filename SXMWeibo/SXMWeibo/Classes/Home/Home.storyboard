@@ -27,13 +27,6 @@
                                                 <constraint firstAttribute="width" constant="60" id="YJo-Il-TWQ"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iAG-Fd-zWS">
-                                            <rect key="frame" x="36" y="36" width="34" height="34"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="34" id="7yh-Ae-3Ay"/>
-                                                <constraint firstAttribute="height" constant="34" id="kcH-lc-FiO"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBH-f9-h9y">
                                             <rect key="frame" x="80" y="10" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -65,6 +58,13 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iAG-Fd-zWS">
+                                            <rect key="frame" x="53" y="53" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="7yh-Ae-3Ay"/>
+                                                <constraint firstAttribute="height" constant="17" id="kcH-lc-FiO"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FDc-iE-aKu" firstAttribute="top" secondItem="iAG-Fd-zWS" secondAttribute="bottom" constant="10" id="HqA-tT-hQ6"/>

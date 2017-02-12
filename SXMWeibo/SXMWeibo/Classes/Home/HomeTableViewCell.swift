@@ -29,6 +29,24 @@ class HomeTableViewCell: UITableViewCell {
                 iconImageView.sd_setImageWithURL(url)
             }
             
+            // 认证图标
+            if let type = status?.user?.verified_type {
+                var name = ""
+                switch type {
+                case 0:
+                    name = "avatar_vip"
+                case 2, 3, 5:
+                    name = "avatar_enterprise_vip"
+                case 220:
+                    name = "avatar_grassroot"
+                default:
+                    name = ""
+                }
+                
+                verifiedImageView.image = UIImage(named: name)
+            }
+            
+            
             nameLabel.text = status?.user?.screen_name
             timeLabel.text = status?.created_at
             sourceLabel.text = status?.source
