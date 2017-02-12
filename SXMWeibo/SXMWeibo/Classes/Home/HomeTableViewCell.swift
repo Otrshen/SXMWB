@@ -58,8 +58,14 @@ class HomeTableViewCell: UITableViewCell {
             }
             
             nameLabel.text = status?.user?.screen_name
-            timeLabel.text = status?.created_at
-            sourceLabel.text = status?.source
+            timeLabel.text = "刚刚" // status?.created_at
+            
+            if let sourceStr: NSString = status?.source where sourceStr != "" {
+                let startIndex = sourceStr.rangeOfString(">").location + 1
+                let length = sourceStr.rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch).location - startIndex
+                let rest = sourceStr.substringWithRange(NSMakeRange(startIndex, length))
+                sourceLabel.text = "来自: " + rest
+            }
             contentLabel.text = status?.text
         }
     }
