@@ -51,6 +51,7 @@
 		C7EDDFAA1E503A7100C8082A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDDFA91E503A7100C8082A /* Status.swift */; };
 		C7EDDFAC1E5040DB00C8082A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDDFAB1E5040DB00C8082A /* User.swift */; };
 		C7EDDFAE1E50498C00C8082A /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDDFAD1E50498C00C8082A /* HomeTableViewCell.swift */; };
+		C7EDDFB01E5065EA00C8082A /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EDDFAF1E5065EA00C8082A /* NSDate+Extension.swift */; };
 		C7FB10401E4703F00052503C /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB103F1E4703F00052503C /* NetworkTools.swift */; };
 		F3BECB2E542DEA2EC1E4E2D3 /* Pods_SXMWeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3689C8003730F7D95B7265 /* Pods_SXMWeiboUITests.framework */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		C7EDDFA91E503A7100C8082A /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C7EDDFAB1E5040DB00C8082A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C7EDDFAD1E50498C00C8082A /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		C7EDDFAF1E5065EA00C8082A /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		C7FB103F1E4703F00052503C /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		D5BFD20A1C256FBF43F8C7D9 /* Pods-SXMWeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXMWeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXMWeiboUITests/Pods-SXMWeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC6ACC146B8CD2470843BD53 /* Pods_SXMWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SXMWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 				C7FB103F1E4703F00052503C /* NetworkTools.swift */,
 				C73CC5EA1E4722AB0086EAE2 /* Common.swift */,
 				C73CC5EC1E4725AA0086EAE2 /* String+Extension.swift */,
+				C7EDDFAF1E5065EA00C8082A /* NSDate+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				C77346081E33728200E64598 /* OAuthViewController.swift in Sources */,
 				C73CC5EB1E4722AB0086EAE2 /* Common.swift in Sources */,
 				C7204ACF1E22769600710598 /* DiscoverTableViewController.swift in Sources */,
+				C7EDDFB01E5065EA00C8082A /* NSDate+Extension.swift in Sources */,
 				C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */,
 				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,
 				C7204AF41E26671C00710598 /* VisitorView.swift in Sources */,
