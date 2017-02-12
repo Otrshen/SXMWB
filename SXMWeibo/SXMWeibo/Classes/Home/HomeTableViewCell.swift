@@ -58,8 +58,59 @@ class HomeTableViewCell: UITableViewCell {
             }
             
             nameLabel.text = status?.user?.screen_name
-            timeLabel.text = "刚刚" // status?.created_at
             
+            /**
+            刚刚(一分钟内)
+            X分钟前(一小时内)
+            X小时前(当天)
+            
+            昨天 HH:mm(昨天)
+            
+            MM-dd HH:mm(一年内)
+            yyyy-MM-dd HH:mm(更早期)
+            */
+            if var timeStr = status?.created_at {
+                timeStr = "Sun Dec 05 12:10:41 +0800 2017"
+                let formatter = NSDateFormatter()
+                formatter.dateFormat = "EE MM dd HH:mm:ss Z yyyy"
+                formatter.locale = NSLocale(localeIdentifier: "en")
+                let createDate = formatter.dateFromString(timeStr)!
+                
+                // 日历类
+                let calendar = NSCalendar.currentCalendar()
+
+                var result = ""
+                var formatterStr = "HH:mm"
+                
+                if calendar.isDateInToday(createDate) { // 今天
+                    let interval = Int(NSDate().timeIntervalSinceDate(createDate))
+                    
+                    if interval < 60 {
+                        result = "刚刚"
+                    } else if interval < 60 * 60 {
+                        result = "\(interval / 60)分钟前"
+                    } else if interval < 60 * 60 * 24 {
+                        result = "\(interval / (60 * 60))小时前"
+                    }
+                } else if calendar.isDateInYesterday(createDate) { // 昨天
+                    formatterStr = "昨天 " + formatterStr
+                    formatter.dateFormat = formatterStr
+                    result = formatter.stringFromDate(createDate)
+                } else {
+                    let comps = calendar.components(NSCalendarUnit.Year, fromDate: createDate, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))
+                    if comps.year >= 1 { // 更早时间
+                        formatterStr = "yyyy-MM-dd " + formatterStr
+                    } else { // 一年以内
+                        formatterStr = "MM-dd " + formatterStr
+                    }
+                    formatter.dateFormat = formatterStr
+                    result = formatter.stringFromDate(createDate)
+                }
+                
+                timeLabel.text = result
+            }
+            
+            // 来源
             if let sourceStr: NSString = status?.source where sourceStr != "" {
                 let startIndex = sourceStr.rangeOfString(">").location + 1
                 let length = sourceStr.rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch).location - startIndex
