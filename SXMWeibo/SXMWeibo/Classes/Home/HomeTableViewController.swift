@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeTableViewController: BaseTableViewController {
 
@@ -23,11 +24,37 @@ class HomeTableViewController: BaseTableViewController {
         // 注册通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("titleChange"), name: SXMPresentationManagerDidPresented, object: animatorManager)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("titleChange"), name: SXMPresentationManagerDidDismissed, object: animatorManager)
+        
+        // 获取微博数据
+        loadData()
     }
     
+    
     // MARK: - 内部控制方法
-    private func setupNav()
-    {
+    private func loadData() {
+        NetworkTools.shareInstance.loadStatuses { (array, error) -> () in
+            if error != nil {
+                SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
+                SVProgressHUD.showErrorWithStatus("获取微博数据失败")
+                return
+            }
+            
+            guard let arr = array else {
+                return
+            }
+            
+            // 将字典数组转换为模型数组
+            var models = [Status]()
+            for dict in arr {
+                let status = Status(dict: dict)
+                models.append(status)
+            }
+            
+            SXMLog(models)
+        }
+    }
+    
+    private func setupNav() {
         // 1.添加左右按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: Selector("leftBtnClick"))
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: Selector("rightBtnClick"))

@@ -22,5 +22,24 @@ class NetworkTools: AFHTTPSessionManager {
         return instance
     }()
     
-  
+    // MARK: - 外部控制方法
+    func loadStatuses(finished: (array: [[String: AnyObject]]?, error: NSError?)->()) {
+        assert(UserAccount.loadUserAccount() != nil, "需授权")
+        
+        // 准备路径
+        let path = "2/statuses/home_timeline.json"
+        let parameters = ["access_token" : UserAccount.loadUserAccount()!.access_token!]
+        GET(path, parameters: parameters, progress: nil, success: { (task, objc) -> Void in
+            
+            guard let arr = (objc as! [String: AnyObject])["statuses"] as? [[String: AnyObject]] else {
+                finished(array: nil, error: NSError(domain: "sxmerror", code: 1000, userInfo: ["messge": "没有获取到数据"]))
+                return
+            }
+            
+            finished(array: arr, error: nil)
+            
+            }) { (task, error) -> Void in
+                finished(array: nil, error: error)
+        }
+    }
 }
