@@ -46,6 +46,16 @@ class HomeTableViewCell: UITableViewCell {
                 verifiedImageView.image = UIImage(named: name)
             }
             
+            // 会员图标
+            if let rank = status?.user?.mbrank {
+                if rank >= 1 && rank <= 6 {
+                    vipImageView.image = UIImage(named: "common_icon_membership_level\(rank)")
+                    nameLabel.textColor = UIColor.orangeColor()
+                } else {
+                    vipImageView.image = nil
+                    nameLabel.textColor = UIColor.blackColor()
+                }
+            }
             
             nameLabel.text = status?.user?.screen_name
             timeLabel.text = status?.created_at

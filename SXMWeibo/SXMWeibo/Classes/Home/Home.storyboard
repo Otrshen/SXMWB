@@ -83,7 +83,7 @@
                                         <constraint firstItem="G2n-dN-jrh" firstAttribute="leading" secondItem="7UG-Yc-B6T" secondAttribute="leading" constant="10" id="weK-68-xBm"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.47291945410468739" green="1" blue="0.36480107180446797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="contentLabel" destination="FDc-iE-aKu" id="Xdo-HJ-Ayy"/>
                                     <outlet property="iconImageView" destination="G2n-dN-jrh" id="ykU-B5-hEU"/>

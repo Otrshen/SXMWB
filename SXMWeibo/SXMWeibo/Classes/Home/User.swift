@@ -17,6 +17,8 @@ class User: NSObject {
     var profile_image_url: String?
     /* 认证类型 */
     var verified_type: Int = -1
+    /* 会员等级 */
+    var mbrank: Int = -1
 //    /* 是否是微博认证用户 true：是，false：否*/
 //    var verified: Bool = false
     
@@ -30,7 +32,7 @@ class User: NSObject {
     }
     
     override var description: String {
-        let property = ["idstr", "screen_name", "profile_image_url", "verified_type"]
+        let property = ["idstr", "screen_name", "profile_image_url", "verified_type", "mbrank"]
         let dict = dictionaryWithValuesForKeys(property)
         return "\(dict)"
     }
