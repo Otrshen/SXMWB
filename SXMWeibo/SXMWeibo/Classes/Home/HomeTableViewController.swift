@@ -11,6 +11,13 @@ import SVProgressHUD
 
 class HomeTableViewController: BaseTableViewController {
 
+    // 保存所有微博数据
+    var statuses: [Status]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +57,8 @@ class HomeTableViewController: BaseTableViewController {
                 models.append(status)
             }
             
-            SXMLog(models)
+            // 保存数据
+            self.statuses = models
         }
     }
     
@@ -112,4 +120,17 @@ class HomeTableViewController: BaseTableViewController {
         btn.addTarget(self, action: Selector("titleBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
+}
+
+extension HomeTableViewController {
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.statuses?.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! HomeTableViewCell
+        cell.status = statuses![indexPath.row]
+        return cell
+    }
 }
