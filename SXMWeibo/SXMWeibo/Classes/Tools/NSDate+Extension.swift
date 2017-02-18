@@ -40,7 +40,7 @@ extension NSDate {
                 return "\(interval / 60)分钟前"
             } else if interval < 60 * 60 * 24 {
                 return "\(interval / (60 * 60))小时前"
-            }
+            } 
         } else if calendar.isDateInYesterday(self) { // 昨天
             formatterStr = "昨天 " + formatterStr
         } else {
