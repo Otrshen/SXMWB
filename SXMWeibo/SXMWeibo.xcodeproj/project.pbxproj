@@ -40,6 +40,7 @@
 		C77346051E333CEB00E64598 /* QRCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346041E333CEB00E64598 /* QRCodeCreateViewController.swift */; };
 		C77346081E33728200E64598 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346071E33728200E64598 /* OAuthViewController.swift */; };
 		C773460A1E33728E00E64598 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77346091E33728E00E64598 /* OAuth.storyboard */; };
+		C78A3C531E59B9F700166B94 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78A3C521E59B9F700166B94 /* StatusViewModel.swift */; };
 		C7C3B3D41E49FDFF0073CCAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */; };
 		C7C3B3D81E49FE260073CCAA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */; };
 		C7C3B3DA1E4B3F510073CCAA /* NewfeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */; };
@@ -110,6 +111,7 @@
 		C77346041E333CEB00E64598 /* QRCodeCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCreateViewController.swift; sourceTree = "<group>"; };
 		C77346071E33728200E64598 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		C77346091E33728E00E64598 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		C78A3C521E59B9F700166B94 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				C7204ACC1E22766F00710598 /* HomeTableViewController.swift */,
 				C7EDDFAB1E5040DB00C8082A /* User.swift */,
 				C7EDDFA91E503A7100C8082A /* Status.swift */,
+				C78A3C521E59B9F700166B94 /* StatusViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				C77346051E333CEB00E64598 /* QRCodeCreateViewController.swift in Sources */,
 				C7EDDFAA1E503A7100C8082A /* Status.swift in Sources */,
 				C7204AE81E26630500710598 /* BaseTableViewController.swift in Sources */,
+				C78A3C531E59B9F700166B94 /* StatusViewModel.swift in Sources */,
 				C7204AD31E2276A900710598 /* ProfileTableViewController.swift in Sources */,
 				C7585BB81E2F966B00059B69 /* QRCodeViewController.swift in Sources */,
 				C73CC5E91E4711150086EAE2 /* UserAccount.swift in Sources */,

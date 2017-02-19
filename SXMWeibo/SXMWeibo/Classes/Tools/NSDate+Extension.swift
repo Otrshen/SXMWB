@@ -20,6 +20,16 @@ extension NSDate {
     }
     
     /**
+     刚刚(一分钟内)
+     X分钟前(一小时内)
+     X小时前(当天)
+     
+     昨天 HH:mm(昨天)
+     
+     MM-dd HH:mm(一年内)
+     yyyy-MM-dd HH:mm(更早期)
+     */
+    /**
      生成当前时间对应的字符串
      */
     func descriptionStr() -> String {

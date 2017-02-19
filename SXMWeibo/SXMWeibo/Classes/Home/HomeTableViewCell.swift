@@ -21,69 +21,31 @@ class HomeTableViewCell: UITableViewCell {
     // 正文
     @IBOutlet weak var contentLabel: UILabel!
     
-    var status: Status? {
+    var viewModel: StatusViewModel? {
         didSet{
             // 设置头像
-            if let urlStr = status?.user?.profile_image_url {
-                let url = NSURL(string: urlStr)
-                iconImageView.sd_setImageWithURL(url)
-            }
+            iconImageView.sd_setImageWithURL(viewModel?.icon_URL)
             
             // 认证图标
-            if let type = status?.user?.verified_type {
-                var name = ""
-                switch type {
-                case 0:
-                    name = "avatar_vip"
-                case 2, 3, 5:
-                    name = "avatar_enterprise_vip"
-                case 220:
-                    name = "avatar_grassroot"
-                default:
-                    name = ""
-                }
-                
-                verifiedImageView.image = UIImage(named: name)
-            }
+            verifiedImageView.image = viewModel?.verified_image
             
             // 会员图标
-            if let rank = status?.user?.mbrank {
-                if rank >= 1 && rank <= 6 {
-                    vipImageView.image = UIImage(named: "common_icon_membership_level\(rank)")
-                    nameLabel.textColor = UIColor.orangeColor()
-                } else {
-                    vipImageView.image = nil
-                    nameLabel.textColor = UIColor.blackColor()
-                }
+            vipImageView.image = nil
+            nameLabel.textColor = UIColor.blackColor()
+            if let image = viewModel?.mbrankImage {
+                vipImageView.image = image
+                nameLabel.textColor = UIColor.orangeColor()
             }
             
-            nameLabel.text = status?.user?.screen_name
+            // 昵称
+            nameLabel.text = viewModel?.status.user?.screen_name
             
-            /**
-            刚刚(一分钟内)
-            X分钟前(一小时内)
-            X小时前(当天)
-            
-            昨天 HH:mm(昨天)
-            
-            MM-dd HH:mm(一年内)
-            yyyy-MM-dd HH:mm(更早期)
-            */
-            if let timeStr = status?.created_at {
-                let createDate = NSDate.createDate(timeStr, formatterStr: "EE MM dd HH:mm:ss Z yyyy")
-                
-                // 生成对应的字符串
-                timeLabel.text = createDate.descriptionStr()
-            }
-            
+            timeLabel.text = viewModel?.created_Time
+          
             // 来源
-            if let sourceStr: NSString = status?.source where sourceStr != "" {
-                let startIndex = sourceStr.rangeOfString(">").location + 1
-                let length = sourceStr.rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch).location - startIndex
-                let rest = sourceStr.substringWithRange(NSMakeRange(startIndex, length))
-                sourceLabel.text = "来自: " + rest
-            }
-            contentLabel.text = status?.text
+            sourceLabel.text = viewModel?.source_Text
+            
+            contentLabel.text = viewModel?.status.text
         }
     }
 
