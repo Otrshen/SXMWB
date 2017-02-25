@@ -11,6 +11,14 @@ import SDWebImage
 
 class HomeTableViewCell: UITableViewCell {
 
+    // 配图布局对象
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var pictureCollectionView: UICollectionView!
+    // 配图高度约束
+    @IBOutlet weak var pictureCollectionViewHeightCons: NSLayoutConstraint!
+    // 配图宽度约束
+    @IBOutlet weak var pictureCollectionViewWidthCons: NSLayoutConstraint!
+    
     @IBOutlet weak var iconImageView: UIImageView!
     // 认证图标
     @IBOutlet weak var verifiedImageView: UIImageView!
@@ -47,7 +55,16 @@ class HomeTableViewCell: UITableViewCell {
             
             contentLabel.text = viewModel?.status.text
             
-            SXMLog("")
+            // 更新配图
+            pictureCollectionView.reloadData()
+            let (itemSize, clvSize) = calculateSize()
+            // 更新cell尺寸
+            if itemSize != CGSizeZero {
+                flowLayout.itemSize = itemSize
+            }
+            // 更新collectionView尺寸
+            pictureCollectionViewHeightCons.constant = clvSize.height
+            pictureCollectionViewWidthCons.constant = clvSize.width
         }
     }
 
@@ -93,7 +110,32 @@ class HomeTableViewCell: UITableViewCell {
         let row = (count - 1) / 3 + 1
         let width = imageWidth * CGFloat(col) + CGFloat(col - 1) * imageMargin
         let height = imageHeight * CGFloat(row) + CGFloat(row - 1) * imageMargin
-        return (CGSize(width: width, height: height), CGSize(width: width, height: height))
+        return (CGSize(width: imageWidth, height: imageHeight), CGSize(width: width, height: height))
     }
 
+}
+
+extension HomeTableViewCell: UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.thumbnail_pic?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("pictureCell", forIndexPath: indexPath) as! HomePictureCell
+//        cell.backgroundColor = UIColor.redColor()
+        cell.url = viewModel!.thumbnail_pic![indexPath.item]
+        return cell
+    }
+}
+
+class HomePictureCell: UICollectionViewCell {
+    var url: NSURL? {
+        didSet {
+            customIconImageView.sd_setImageWithURL(url)
+        }
+    }
+    
+    @IBOutlet weak var customIconImageView: UIImageView!
+    
+    
 }
