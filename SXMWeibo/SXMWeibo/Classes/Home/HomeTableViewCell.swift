@@ -46,6 +46,8 @@ class HomeTableViewCell: UITableViewCell {
             sourceLabel.text = viewModel?.source_Text
             
             contentLabel.text = viewModel?.status.text
+            
+            SXMLog("")
         }
     }
 
@@ -55,6 +57,43 @@ class HomeTableViewCell: UITableViewCell {
         // 设置正文最大宽度
         contentLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
         iconImageView.layer.cornerRadius = 30
+    }
+    
+    // MARK: - 内部控制方法
+    
+    // 计算cell和collectionview的尺寸
+    private func calculateSize() -> (CGSize, CGSize) {
+        let count = viewModel?.thumbnail_pic?.count ?? 0
+        // 无配图
+        if count == 0 {
+            return (CGSizeZero, CGSizeZero)
+        }
+        
+        // 一张配图
+        if count == 1 {
+            let key = viewModel?.thumbnail_pic!.first!.absoluteString
+            // 获取缓存的图片
+            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key)
+            return (image.size, image.size)
+        }
+        
+        let imageWidth: CGFloat = 90
+        let imageHeight: CGFloat = 90
+        let imageMargin: CGFloat = 10
+        // 四张配图
+        if count == 4 {
+            let col = 2
+            let row = col
+            let width = imageWidth * CGFloat(col) + CGFloat(col - 1) * imageMargin
+            let height = imageHeight * CGFloat(row) + CGFloat(row - 1) * imageMargin
+            return (CGSize(width: width, height: height), CGSize(width: width, height: height))
+        }
+        
+        let col = 3
+        let row = (count - 1) / 3 + 1
+        let width = imageWidth * CGFloat(col) + CGFloat(col - 1) * imageMargin
+        let height = imageHeight * CGFloat(row) + CGFloat(row - 1) * imageMargin
+        return (CGSize(width: width, height: height), CGSize(width: width, height: height))
     }
 
 }
