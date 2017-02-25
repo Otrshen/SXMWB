@@ -41,6 +41,7 @@
 		C77346081E33728200E64598 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346071E33728200E64598 /* OAuthViewController.swift */; };
 		C773460A1E33728E00E64598 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77346091E33728E00E64598 /* OAuth.storyboard */; };
 		C78A3C531E59B9F700166B94 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78A3C521E59B9F700166B94 /* StatusViewModel.swift */; };
+		C791BBEE1E61412B004A2709 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791BBED1E61412B004A2709 /* R.generated.swift */; };
 		C7C3B3D41E49FDFF0073CCAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */; };
 		C7C3B3D81E49FE260073CCAA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */; };
 		C7C3B3DA1E4B3F510073CCAA /* NewfeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */; };
@@ -112,6 +113,7 @@
 		C77346071E33728200E64598 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		C77346091E33728E00E64598 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		C78A3C521E59B9F700166B94 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		C791BBED1E61412B004A2709 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		C7C3B3D91E4B3F510073CCAA /* NewfeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		C7204AC91E2275E500710598 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C791BBED1E61412B004A2709 /* R.generated.swift */,
 				C7204AD91E2518AF00710598 /* UIButton+Extension.swift */,
 				C7585BA71E2B4B6200059B69 /* UIBarButtonItem+Extension.swift */,
 				C7585BA91E2B844F00059B69 /* TitleButton.swift */,
@@ -391,6 +394,7 @@
 			buildConfigurationList = C7E148541E225FFD00BD2E0A /* Build configuration list for PBXNativeTarget "SXMWeibo" */;
 			buildPhases = (
 				7461E78210F297092228B8A7 /* [CP] Check Pods Manifest.lock */,
+				C7A344561E61398400D91F25 /* R.swift */,
 				C7E148281E225FFD00BD2E0A /* Sources */,
 				C7E148291E225FFD00BD2E0A /* Frameworks */,
 				C7E1482A1E225FFD00BD2E0A /* Resources */,
@@ -637,6 +641,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SXMWeibo/Pods-SXMWeibo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C7A344561E61398400D91F25 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"\n";
+		};
 		EAD2A02C5D34BC25D8ADA73A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,6 +709,7 @@
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
 				C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */,
 				C7EDDFAE1E50498C00C8082A /* HomeTableViewCell.swift in Sources */,
+				C791BBEE1E61412B004A2709 /* R.generated.swift in Sources */,
 				C73CC5ED1E4725AA0086EAE2 /* String+Extension.swift in Sources */,
 				C77346081E33728200E64598 /* OAuthViewController.swift in Sources */,
 				C73CC5EB1E4722AB0086EAE2 /* Common.swift in Sources */,

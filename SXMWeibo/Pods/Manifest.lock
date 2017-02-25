@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - QorumLogs (0.2)
+  - R.swift (0.12.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - QorumLogs (= 0.2)
+  - R.swift (= 0.12.0)
   - SDWebImage
   - SnapKit (= 0.19.0)
   - SVProgressHUD
@@ -31,10 +33,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   QorumLogs: db805fafceab06c4628b1173e629f832ccfbb9a4
+  R.swift: 8d8a9f0cb36462d0dff82b70cc2c0396add668fe
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SnapKit: 57c00a21bac67a863f2192e816330f6665585938
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 34d0c2f09399a0b1e5cefe94b5add33997f1c862
+PODFILE CHECKSUM: f77342bde6460e23672f840211f5a1ad251c48ef
 
 COCOAPODS: 1.1.1

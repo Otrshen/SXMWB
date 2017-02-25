@@ -68,11 +68,13 @@ extension AppDelegate {
      */
     func changeRootViewController(notice: NSNotification) {
         if notice.object as! Bool {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            window?.rootViewController = sb.instantiateInitialViewController()
+            window?.rootViewController = R.storyboard.main.initialViewController;
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            window?.rootViewController = sb.instantiateInitialViewController()
         } else {
-            let sb = UIStoryboard(name: "Welcome", bundle: nil)
-            window?.rootViewController = sb.instantiateInitialViewController()
+            window?.rootViewController = R.storyboard.welcome.initialViewController;
+//            let sb = UIStoryboard(name: "Welcome", bundle: nil)
+//            window?.rootViewController = sb.instantiateInitialViewController()
         }
     }
     
@@ -84,9 +86,11 @@ extension AppDelegate {
         if UserAccount.isLogin() {
             
             if isNewVersion() {
-                return UIStoryboard(name: "Newfeature", bundle: nil).instantiateInitialViewController()!
+                return R.storyboard.newfeature.initialViewController!;
+//                return UIStoryboard(name: "Newfeature", bundle: nil).instantiateInitialViewController()!
             } else {
-                return UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()!
+                return R.storyboard.welcome.initialViewController!;
+//                return UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()!
             }
         }
         
