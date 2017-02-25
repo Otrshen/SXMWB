@@ -22,6 +22,8 @@ class StatusViewModel: NSObject {
     var created_Time: String = ""
     /// 微博格式化之后的来源
     var source_Text: String = ""
+    /// 保存所有配图的URL
+    var thumbnail_pic: [NSURL]?
     
     init(status: Status) {
         self.status = status
@@ -72,5 +74,21 @@ class StatusViewModel: NSObject {
             // 2.生成发布微博时间对应的字符串
             created_Time = createDate.descriptionStr()
         }
+        
+        // 处理配图的URL
+        // 取出配图数组
+        if let picurls = status.pic_urls {
+            thumbnail_pic = [NSURL]()
+            // 遍历配图数组下载图片
+            for dict in picurls {
+                // 取图片的地址
+                guard let urlStr = dict["thumbnail_pic"] as? String else {
+                    continue
+                }
+                let url = NSURL(string: urlStr)!
+                thumbnail_pic?.append(url)
+            }
+        }
+        
     }
 }
