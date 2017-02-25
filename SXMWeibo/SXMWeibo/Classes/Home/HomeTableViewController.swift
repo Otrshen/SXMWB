@@ -36,8 +36,8 @@ class HomeTableViewController: BaseTableViewController {
         // 获取微博数据
         loadData()
         
-        tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300
+//        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     
@@ -155,6 +155,8 @@ class HomeTableViewController: BaseTableViewController {
         btn.addTarget(self, action: Selector("titleBtnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
+    
+    private var rowHeightCaches = [String: CGFloat]()
 }
 
 extension HomeTableViewController {
@@ -167,5 +169,29 @@ extension HomeTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! HomeTableViewCell
         cell.viewModel = statuses![indexPath.row]
         return cell
+    }
+    
+    // 返回行高
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // 从缓存中获取行高
+        let viewModel = statuses![indexPath.row]
+        guard let height = rowHeightCaches[viewModel.status.idstr ?? "-1"] else {
+            SXMLog("计算行高\(indexPath.row))")
+            // 缓存中有行高
+            // 获取当前行对应的cell
+            let cell = tableView.dequeueReusableCellWithIdentifier("homeCell") as! HomeTableViewCell
+            let temp = cell.calcuateRowHeight(viewModel)
+            rowHeightCaches[viewModel.status.idstr ?? "-1"] = temp
+            return temp
+        }
+
+        // 缓存中有直接返回
+        return height
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // 释放缓存
+        rowHeightCaches.removeAll()
     }
 }

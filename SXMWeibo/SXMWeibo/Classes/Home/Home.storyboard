@@ -52,8 +52,8 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDc-iE-aKu">
-                                            <rect key="frame" x="10" y="79" width="42" height="87"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDc-iE-aKu">
+                                            <rect key="frame" x="10" y="80" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcL-6B-if9">
-                                            <rect key="frame" x="0.0" y="348" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="210.5" width="600" height="44"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPF-3S-omO">
                                                     <rect key="frame" x="400" y="0.0" width="200" height="44"/>
@@ -107,8 +107,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="lPF-3S-omO" secondAttribute="trailing" id="yVf-ic-Tgc"/>
                                             </constraints>
                                         </view>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-QB-gwa">
-                                            <rect key="frame" x="10" y="250" width="290" height="90"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-QB-gwa">
+                                            <rect key="frame" x="10" y="110" width="290" height="90"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="90" id="Yz5-kB-thX"/>
                                                 <constraint firstAttribute="width" constant="290" id="rqd-cv-Fjm"/>
@@ -150,7 +151,6 @@
                                         </collectionView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="hcL-6B-if9" secondAttribute="bottom" id="0Xx-B5-kv1"/>
                                         <constraint firstItem="zdU-QB-gwa" firstAttribute="top" secondItem="FDc-iE-aKu" secondAttribute="bottom" constant="10" id="D3i-Pj-EZj"/>
                                         <constraint firstAttribute="trailing" secondItem="hcL-6B-if9" secondAttribute="trailing" id="FK6-tA-xxK"/>
                                         <constraint firstItem="FDc-iE-aKu" firstAttribute="top" secondItem="iAG-Fd-zWS" secondAttribute="bottom" constant="10" id="HqA-tT-hQ6"/>
@@ -176,6 +176,7 @@
                                 <connections>
                                     <outlet property="contentLabel" destination="FDc-iE-aKu" id="Xdo-HJ-Ayy"/>
                                     <outlet property="flowLayout" destination="RU3-jO-ljl" id="4Ax-Zc-8mt"/>
+                                    <outlet property="footerView" destination="hcL-6B-if9" id="FIB-vk-7jq"/>
                                     <outlet property="iconImageView" destination="G2n-dN-jrh" id="ykU-B5-hEU"/>
                                     <outlet property="nameLabel" destination="pBH-f9-h9y" id="2JN-Y6-aLM"/>
                                     <outlet property="pictureCollectionView" destination="zdU-QB-gwa" id="P9t-PU-TSy"/>

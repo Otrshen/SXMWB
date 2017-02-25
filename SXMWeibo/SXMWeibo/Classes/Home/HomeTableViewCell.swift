@@ -28,6 +28,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     // 正文
     @IBOutlet weak var contentLabel: UILabel!
+    // 底部视图
+    @IBOutlet weak var footerView: UIView!
     
     var viewModel: StatusViewModel? {
         didSet{
@@ -74,6 +76,13 @@ class HomeTableViewCell: UITableViewCell {
         // 设置正文最大宽度
         contentLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
         iconImageView.layer.cornerRadius = 30
+    }
+    
+    // MARK: - 外部控制方法
+    func calcuateRowHeight(viewModel: StatusViewModel) -> CGFloat {
+        self.viewModel = viewModel
+        self.layoutIfNeeded() // 更新UI
+        return CGRectGetMaxY(footerView.frame)
     }
     
     // MARK: - 内部控制方法
