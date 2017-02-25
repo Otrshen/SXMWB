@@ -34,6 +34,9 @@ class HomeTableViewController: BaseTableViewController {
         
         // 获取微博数据
         loadData()
+        
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     

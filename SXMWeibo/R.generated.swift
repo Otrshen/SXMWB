@@ -183,6 +183,8 @@ struct R {
       
       static func validateImages() {
         assert(UIImage(named: "common_icon_membership_level1") != nil, "[R.swift] Image named 'common_icon_membership_level1' is used in storyboard 'Home', but couldn't be loaded.")
+        assert(UIImage(named: "timeline_card_bottom_background") != nil, "[R.swift] Image named 'timeline_card_bottom_background' is used in storyboard 'Home', but couldn't be loaded.")
+        assert(UIImage(named: "timeline_icon_retweet") != nil, "[R.swift] Image named 'timeline_icon_retweet' is used in storyboard 'Home', but couldn't be loaded.")
         assert(UIImage(named: "tabbar_home") != nil, "[R.swift] Image named 'tabbar_home' is used in storyboard 'Home', but couldn't be loaded.")
         assert(UIImage(named: "tabbar_home_highlighted") != nil, "[R.swift] Image named 'tabbar_home_highlighted' is used in storyboard 'Home', but couldn't be loaded.")
       }

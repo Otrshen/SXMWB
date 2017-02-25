@@ -39,7 +39,7 @@ class StatusViewModel: NSObject {
         switch status.user?.verified_type ?? -1
         {
         case 0:
-            verified_image = UIImage(named: "avatar_vip")
+            verified_image = R.image.avatar_vip
         case 2, 3, 5:
             verified_image = UIImage(named: "avatar_enterprise_vip")
         case 220:
