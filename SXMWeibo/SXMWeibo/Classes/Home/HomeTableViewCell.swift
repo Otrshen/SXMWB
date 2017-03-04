@@ -30,6 +30,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     // 底部视图
     @IBOutlet weak var footerView: UIView!
+    // 转发微博正文
+    @IBOutlet weak var forwardLabel: UILabel!
     
     var viewModel: StatusViewModel? {
         didSet{
@@ -67,6 +69,12 @@ class HomeTableViewCell: UITableViewCell {
             // 更新collectionView尺寸
             pictureCollectionViewHeightCons.constant = clvSize.height
             pictureCollectionViewWidthCons.constant = clvSize.width
+            
+            // 转发微博
+            if let text = viewModel?.forwardText {
+                forwardLabel.text = text
+                forwardLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
+            }
         }
     }
 

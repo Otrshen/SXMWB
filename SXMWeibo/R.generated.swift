@@ -154,9 +154,9 @@ struct R {
   }
   
   struct reuseIdentifier {
+    static var forwardCell: ReuseIdentifier<HomeTableViewCell> { return ReuseIdentifier(identifier: "forwardCell") }
     static var homeCell: ReuseIdentifier<HomeTableViewCell> { return ReuseIdentifier(identifier: "homeCell") }
     static var newfeatureCell: ReuseIdentifier<SXMNewfeatureCell> { return ReuseIdentifier(identifier: "newfeatureCell") }
-    static var pictureCell: ReuseIdentifier<HomePictureCell> { return ReuseIdentifier(identifier: "pictureCell") }
   }
   
   struct segue {

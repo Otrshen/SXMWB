@@ -37,6 +37,7 @@ class HomeTableViewController: BaseTableViewController {
         loadData()
         
         tableView.estimatedRowHeight = 300
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 //        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -156,6 +157,7 @@ class HomeTableViewController: BaseTableViewController {
         return btn
     }()
     
+    // 缓存行高
     private var rowHeightCaches = [String: CGFloat]()
 }
 
@@ -166,8 +168,13 @@ extension HomeTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! HomeTableViewCell
-        cell.viewModel = statuses![indexPath.row]
+        
+        let viewModel = statuses![indexPath.row]
+        let identifier = (viewModel.status.retweeted_status != nil) ? "forwardCell" : "homeCell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! HomeTableViewCell
+        cell.viewModel = viewModel
+        
         return cell
     }
     
@@ -175,11 +182,12 @@ extension HomeTableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // 从缓存中获取行高
         let viewModel = statuses![indexPath.row]
+        let identifier = (viewModel.status.retweeted_status != nil) ? "forwardCell" : "homeCell"
         guard let height = rowHeightCaches[viewModel.status.idstr ?? "-1"] else {
             SXMLog("计算行高\(indexPath.row))")
             // 缓存中有行高
             // 获取当前行对应的cell
-            let cell = tableView.dequeueReusableCellWithIdentifier("homeCell") as! HomeTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! HomeTableViewCell
             let temp = cell.calcuateRowHeight(viewModel)
             rowHeightCaches[viewModel.status.idstr ?? "-1"] = temp
             return temp
