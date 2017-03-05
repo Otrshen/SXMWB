@@ -47,6 +47,11 @@ class HomeTableViewController: BaseTableViewController {
     
     func loadMoreData() {
         SXMLog("下拉刷新")
+        
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("test"), userInfo: nil, repeats: false)
+    }
+    
+    func test() {
         refreshControl?.endRefreshing()
     }
     

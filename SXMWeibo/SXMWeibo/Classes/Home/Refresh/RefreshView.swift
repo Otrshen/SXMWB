@@ -30,12 +30,25 @@ class SXMRefreshControl: UIRefreshControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func endRefreshing() {
+        super.endRefreshing()
+        refreshView.stopLoadingView()
+    }
+    
     // 记录是否需要旋转
     var rotationFlag = false
+    
     // MRAK: - 内部控制方法
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         if frame.origin.y == 0 || frame.origin.y == -64 { return }
+        
+        // 是否触发了下拉刷新事件
+        if refreshing {
+            // 隐藏箭头视图，显示旋转视图
+            refreshView.startLoadingView()
+            return
+        }
         
         if frame.origin.y < -50 && !rotationFlag {
             SXMLog("上")
@@ -79,5 +92,29 @@ class RefreshView: UIView {
         UIView.animateWithDuration(0.5) { () -> Void in
             self.arrowImageView.transform = CGAffineTransformRotate(self.arrowImageView.transform, angle)
         }
+    }
+    
+    // 显示提示视图
+    func startLoadingView() {
+        // 隐藏提示视图
+        tipView.hidden = true
+        
+        if let _ = loadingImageView.layer.animationForKey("sxm") {
+            return
+        }
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * M_PI
+        anim.duration = 1.0
+        anim.repeatCount = MAXFLOAT
+
+        loadingImageView.layer.addAnimation(anim, forKey: "sxm")
+    }
+    
+    func stopLoadingView() {
+        // 显示提示视图
+        tipView.hidden = false
+        
+        loadingImageView.layer.removeAllAnimations()
     }
 }
