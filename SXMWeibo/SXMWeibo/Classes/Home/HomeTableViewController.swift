@@ -13,11 +13,7 @@ import SDWebImage
 class HomeTableViewController: BaseTableViewController {
 
     // 保存所有微博数据
-    var statuses: [StatusViewModel]? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var statuses: [StatusViewModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,23 +38,16 @@ class HomeTableViewController: BaseTableViewController {
 //        tableView.rowHeight = UITableViewAutomaticDimension
         
         refreshControl = SXMRefreshControl()
-        refreshControl?.addTarget(self, action: Selector("loadMoreData"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: Selector("loadData"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.beginRefreshing()
     }
-    
-    func loadMoreData() {
-        SXMLog("下拉刷新")
-        
-        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("test"), userInfo: nil, repeats: false)
-    }
-    
-    func test() {
-        refreshControl?.endRefreshing()
-    }
-    
     
     // MARK: - 内部控制方法
-    private func loadData() {
-        NetworkTools.shareInstance.loadStatuses { (array, error) -> () in
+    @objc private func loadData() {
+        
+        let since_id = statuses?.first?.status.idstr ?? "0"
+        
+        NetworkTools.shareInstance.loadStatuses(since_id) { (array, error) -> () in
             if error != nil {
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
                 SVProgressHUD.showErrorWithStatus("获取微博数据失败")
@@ -76,11 +65,17 @@ class HomeTableViewController: BaseTableViewController {
                 models.append(status)
             }
             
-            // 保存数据,缓存好图片再刷新界面
-//            self.statuses = models
+            // 处理微博数据
+            if since_id != "0" {
+                self.statuses = models + self.statuses!
+            } else {
+                self.statuses = models
+            }
             
             // 缓存微博所有配图
             self.cachesImages(models)
+            
+            self.refreshControl?.endRefreshing()
         }
     }
     
@@ -108,7 +103,7 @@ class HomeTableViewController: BaseTableViewController {
         
         dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
             SXMLog("全部图片下载完成");
-            self.statuses = viewModels
+            self.tableView.reloadData()
         }
     }
     
