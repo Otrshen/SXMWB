@@ -40,6 +40,9 @@ class HomeTableViewController: BaseTableViewController {
         refreshControl = SXMRefreshControl()
         refreshControl?.addTarget(self, action: Selector("loadData"), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl?.beginRefreshing()
+        
+        // 提示框
+        navigationController?.navigationBar.insertSubview(tipLabel, atIndex: 0)
     }
     
     // MARK: - 内部控制方法
@@ -76,6 +79,24 @@ class HomeTableViewController: BaseTableViewController {
             self.cachesImages(models)
             
             self.refreshControl?.endRefreshing()
+            
+            // 显示刷新提醒
+            self.showRefreshStatus(models.count)
+        }
+    }
+    
+    private func showRefreshStatus(count: Int) {
+        tipLabel.text = (count == 0) ? "没有更多数据" : "刷新到\(count)条数据"
+        tipLabel.hidden = false
+        // 执行动画
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.tipLabel.transform = CGAffineTransformMakeTranslation(0, 44)
+            }) { (_) -> Void in
+                UIView.animateKeyframesWithDuration(1.0, delay: 2.0, options: UIViewKeyframeAnimationOptions(rawValue: 0), animations: { () -> Void in
+                    self.tipLabel.transform = CGAffineTransformIdentity
+                    }, completion: { (_) -> Void in
+                        self.tipLabel.hidden = true
+                })
         }
     }
     
@@ -168,6 +189,19 @@ class HomeTableViewController: BaseTableViewController {
     
     // 缓存行高
     private var rowHeightCaches = [String: CGFloat]()
+    
+    // 刷新提示视图
+    private var tipLabel: UILabel = {
+        let lb = UILabel()
+        lb.backgroundColor = UIColor.orangeColor()
+        lb.text = "没有更多数据"
+        lb.textAlignment = NSTextAlignment.Center
+        lb.textColor = UIColor.whiteColor()
+        let width = UIScreen.mainScreen().bounds.width
+        lb.frame = CGRect(x: 0, y: 0, width: width, height: 44)
+        lb.hidden = true
+        return lb
+    }()
 }
 
 extension HomeTableViewController {
