@@ -13,11 +13,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="126" id="oVu-M0-CeJ" customClass="HomeTableViewCell" customModule="SXM微博" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="126"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="281" id="oVu-M0-CeJ" customClass="HomeTableViewCell" customModule="SXM微博" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="281"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oVu-M0-CeJ" id="7UG-Yc-B6T">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="125.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="280.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G2n-dN-jrh">
@@ -189,7 +189,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="forwardCell" rowHeight="376" id="COH-pZ-QQ8" customClass="HomeTableViewCell" customModule="SXM微博" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="218" width="600" height="376"/>
+                                <rect key="frame" x="0.0" y="373" width="600" height="376"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="COH-pZ-QQ8" id="qVk-wt-lWM">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="375.5"/>

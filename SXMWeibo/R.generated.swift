@@ -133,6 +133,8 @@ struct R {
     static var tabbar_message_center_highlighted: UIImage? { return UIImage(named: "tabbar_message_center_highlighted", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
     static var tabbar_profile: UIImage? { return UIImage(named: "tabbar_profile", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
     static var tabbar_profile_highlighted: UIImage? { return UIImage(named: "tabbar_profile_highlighted", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
+    static var tableview_loading: UIImage? { return UIImage(named: "tableview_loading", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
+    static var tableview_pull_refresh: UIImage? { return UIImage(named: "tableview_pull_refresh", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
     static var timeline_card_bottom_background: UIImage? { return UIImage(named: "timeline_card_bottom_background", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
     static var timeline_card_bottom_line_highlighted: UIImage? { return UIImage(named: "timeline_card_bottom_line_highlighted", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
     static var timeline_card_middle_background: UIImage? { return UIImage(named: "timeline_card_middle_background", inBundle: _R.hostingBundle, compatibleWithTraitCollection: nil) }
@@ -150,6 +152,7 @@ struct R {
   }
   
   struct nib {
+    static var refreshView: _R.nib._RefreshView { return _R.nib._RefreshView() }
     static var visitorView: _R.nib._VisitorView { return _R.nib._VisitorView() }
   }
   
@@ -324,6 +327,19 @@ struct _R {
   static var hostingBundle: NSBundle? { return NSBundle(identifier: "shenming.SXMWeibo") }
   
   struct nib {
+    struct _RefreshView: NibResource {
+      var instance: UINib { return UINib.init(nibName: "RefreshView", bundle: _R.hostingBundle) }
+      var name: String { return "RefreshView" }
+      
+      func firstView(ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]?) -> RefreshView? {
+        return instantiateWithOwner(ownerOrNil, options: optionsOrNil)[0] as? RefreshView
+      }
+      
+      func instantiateWithOwner(ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]?) -> [AnyObject] {
+        return instance.instantiateWithOwner(ownerOrNil, options: optionsOrNil)
+      }
+    }
+    
     struct _VisitorView: NibResource {
       var instance: UINib { return UINib.init(nibName: "VisitorView", bundle: _R.hostingBundle) }
       var name: String { return "VisitorView" }

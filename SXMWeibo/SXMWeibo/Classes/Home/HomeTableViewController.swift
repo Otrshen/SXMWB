@@ -36,9 +36,18 @@ class HomeTableViewController: BaseTableViewController {
         // 获取微博数据
         loadData()
         
+        // 设置tableView
         tableView.estimatedRowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 //        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        refreshControl = SXMRefreshControl()
+        refreshControl?.addTarget(self, action: Selector("loadMoreData"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func loadMoreData() {
+        SXMLog("下拉刷新")
+        refreshControl?.endRefreshing()
     }
     
     

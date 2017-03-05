@@ -41,6 +41,8 @@
 		C77346081E33728200E64598 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346071E33728200E64598 /* OAuthViewController.swift */; };
 		C773460A1E33728E00E64598 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77346091E33728E00E64598 /* OAuth.storyboard */; };
 		C78A3C531E59B9F700166B94 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78A3C521E59B9F700166B94 /* StatusViewModel.swift */; };
+		C78C85861E6BD8A0006BEAE0 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78C85851E6BD8A0006BEAE0 /* RefreshView.xib */; };
+		C78C85881E6BD8C9006BEAE0 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C85871E6BD8C9006BEAE0 /* RefreshView.swift */; };
 		C791BBEE1E61412B004A2709 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791BBED1E61412B004A2709 /* R.generated.swift */; };
 		C7C3B3D41E49FDFF0073CCAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */; };
 		C7C3B3D81E49FE260073CCAA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */; };
@@ -113,6 +115,8 @@
 		C77346071E33728200E64598 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		C77346091E33728E00E64598 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		C78A3C521E59B9F700166B94 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		C78C85851E6BD8A0006BEAE0 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
+		C78C85871E6BD8C9006BEAE0 /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		C791BBED1E61412B004A2709 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		C7C3B3D31E49FDFF0073CCAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C7C3B3D71E49FE260073CCAA /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		C7204AC51E2275E500710598 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C78C85841E6BD884006BEAE0 /* Refresh */,
 				C7585BB41E2F950E00059B69 /* QRCode */,
 				C7585BAB1E2BA6D000059B69 /* Popover */,
 				C7204AED1E2663A600710598 /* Home.storyboard */,
@@ -322,6 +327,15 @@
 				C73CC5E81E4711150086EAE2 /* UserAccount.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		C78C85841E6BD884006BEAE0 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				C78C85851E6BD8A0006BEAE0 /* RefreshView.xib */,
+				C78C85871E6BD8C9006BEAE0 /* RefreshView.swift */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 		C7C3B3D21E49FDCC0073CCAA /* Newfeature */ = {
@@ -511,6 +525,7 @@
 				C7204AEE1E2663A600710598 /* Home.storyboard in Resources */,
 				C7585BB61E2F952200059B69 /* QRCode.storyboard in Resources */,
 				C7204AD71E23BEE600710598 /* MainVCSettings.json in Resources */,
+				C78C85861E6BD8A0006BEAE0 /* RefreshView.xib in Resources */,
 				C7E148371E225FFD00BD2E0A /* Assets.xcassets in Resources */,
 				C7C3B3DC1E4B3F630073CCAA /* Newfeature.storyboard in Resources */,
 				C7204AF01E2663AE00710598 /* Message.storyboard in Resources */,
@@ -706,6 +721,7 @@
 				C7204ACD1E22766F00710598 /* HomeTableViewController.swift in Sources */,
 				C7585BB31E2E483000059B69 /* SXMPresentationManager.swift in Sources */,
 				C7E148301E225FFD00BD2E0A /* AppDelegate.swift in Sources */,
+				C78C85881E6BD8C9006BEAE0 /* RefreshView.swift in Sources */,
 				C7204AD11E2276A200710598 /* MessageTableViewController.swift in Sources */,
 				C7585BA81E2B4B6200059B69 /* UIBarButtonItem+Extension.swift in Sources */,
 				C7EDDFAE1E50498C00C8082A /* HomeTableViewCell.swift in Sources */,
