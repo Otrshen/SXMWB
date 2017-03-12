@@ -13,7 +13,7 @@ import SDWebImage
 class HomeTableViewController: BaseTableViewController {
 
     // 保存所有微博数据
-    var statuses: [StatusViewModel]?
+    var statusListModel = StatusListModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,48 +47,18 @@ class HomeTableViewController: BaseTableViewController {
     
     // MARK: - 内部控制方法
     @objc private func loadData() {
-        
-        var since_id = statuses?.first?.status.idstr ?? "0"
-        var max_id = "0"
-        if lastStatus {
-            since_id = "0"
-            max_id = statuses?.last?.status.idstr ?? "0"
-        }
-        
-        NetworkTools.shareInstance.loadStatuses(since_id, max_id: max_id) { (array, error) -> () in
+        statusListModel.loadData(lastStatus) { (models, error) -> () in
             if error != nil {
-                SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
-                SVProgressHUD.showErrorWithStatus("获取微博数据失败")
+                SVProgressHUD.showErrorWithStatus("", maskType: SVProgressHUDMaskType.Black)
                 return
             }
             
-            guard let arr = array else {
-                return
-            }
-            
-            // 将字典数组转换为模型数组
-            var models = [StatusViewModel]()
-            for dict in arr {
-                let status = StatusViewModel(status: Status(dict: dict))
-                models.append(status)
-            }
-            
-            // 处理微博数据
-            if since_id != "0" {
-                self.statuses = models + self.statuses!
-            } else if max_id != "0" {
-                self.statuses = self.statuses! + models
-            } else {
-                self.statuses = models
-            }
-            
-            // 缓存微博所有配图
-            self.cachesImages(models)
-            
+            // 结束下拉加载
             self.refreshControl?.endRefreshing()
-            
             // 显示刷新提醒
-            self.showRefreshStatus(models.count)
+            self.showRefreshStatus(models!.count)
+            // 刷新表格
+            self.tableView.reloadData()
         }
     }
     
@@ -104,34 +74,6 @@ class HomeTableViewController: BaseTableViewController {
                     }, completion: { (_) -> Void in
                         self.tipLabel.hidden = true
                 })
-        }
-    }
-    
-    private func cachesImages(viewModels: [StatusViewModel]) {
-        // 创建一个组
-        let group = dispatch_group_create()
-        
-        for viewModel in viewModels {
-            guard let picurls = viewModel.thumbnail_pic else {
-                continue
-            }
-            
-            // 遍历配图数组下载图片
-            for url in picurls {
-                // 将下载操作添加到组中
-                dispatch_group_enter(group)
-                // 下载图片
-                SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (image, error, _, _, _) -> Void in
-                    SXMLog("图片下载完成")
-                    // 将当前下载操作从组中移除
-                    dispatch_group_leave(group)
-                })
-            }
-        }
-        
-        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
-            SXMLog("全部图片下载完成");
-            self.tableView.reloadData()
         }
     }
     
@@ -217,19 +159,19 @@ class HomeTableViewController: BaseTableViewController {
 extension HomeTableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.statuses?.count ?? 0
+        return statusListModel.statuses?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let viewModel = statuses![indexPath.row]
+        let viewModel = statusListModel.statuses![indexPath.row]
         let identifier = (viewModel.status.retweeted_status != nil) ? "forwardCell" : "homeCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! HomeTableViewCell
         cell.viewModel = viewModel
         
         // 判断是否是最后一条微博
-        if indexPath.row == (statuses!.count - 1) {
+        if indexPath.row == (statusListModel.statuses!.count - 1) {
             SXMLog("最后一条微博")
             lastStatus = true
             loadData()
@@ -242,7 +184,7 @@ extension HomeTableViewController {
     // 返回行高
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // 从缓存中获取行高
-        let viewModel = statuses![indexPath.row]
+        let viewModel = statusListModel.statuses![indexPath.row]
         let identifier = (viewModel.status.retweeted_status != nil) ? "forwardCell" : "homeCell"
         guard let height = rowHeightCaches[viewModel.status.idstr ?? "-1"] else {
             SXMLog("计算行高\(indexPath.row))")
