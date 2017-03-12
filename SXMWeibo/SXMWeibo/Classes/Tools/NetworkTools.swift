@@ -23,13 +23,14 @@ class NetworkTools: AFHTTPSessionManager {
     }()
     
     // MARK: - 外部控制方法
-    func loadStatuses(since_id: String, finished: (array: [[String: AnyObject]]?, error: NSError?)->()) {
+    func loadStatuses(since_id: String, max_id: String, finished: (array: [[String: AnyObject]]?, error: NSError?)->()) {
         assert(UserAccount.loadUserAccount() != nil, "需授权")
         
         // 准备路径
         let path = "2/statuses/home_timeline.json"
         
-        let parameters = ["access_token" : UserAccount.loadUserAccount()!.access_token!, "since_id" : since_id]
+        let temp = (max_id != "0") ?  "\(Int(max_id)! - 1)" : max_id
+        let parameters = ["access_token" : UserAccount.loadUserAccount()!.access_token!, "since_id" : since_id, "max_id" : temp]
         GET(path, parameters: parameters, progress: nil, success: { (task, objc) -> Void in
             
             guard let arr = (objc as! [String: AnyObject])["statuses"] as? [[String: AnyObject]] else {

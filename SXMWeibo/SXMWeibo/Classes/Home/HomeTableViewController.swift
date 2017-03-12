@@ -48,9 +48,14 @@ class HomeTableViewController: BaseTableViewController {
     // MARK: - 内部控制方法
     @objc private func loadData() {
         
-        let since_id = statuses?.first?.status.idstr ?? "0"
+        var since_id = statuses?.first?.status.idstr ?? "0"
+        var max_id = "0"
+        if lastStatus {
+            since_id = "0"
+            max_id = statuses?.last?.status.idstr ?? "0"
+        }
         
-        NetworkTools.shareInstance.loadStatuses(since_id) { (array, error) -> () in
+        NetworkTools.shareInstance.loadStatuses(since_id, max_id: max_id) { (array, error) -> () in
             if error != nil {
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
                 SVProgressHUD.showErrorWithStatus("获取微博数据失败")
@@ -71,6 +76,8 @@ class HomeTableViewController: BaseTableViewController {
             // 处理微博数据
             if since_id != "0" {
                 self.statuses = models + self.statuses!
+            } else if max_id != "0" {
+                self.statuses = self.statuses! + models
             } else {
                 self.statuses = models
             }
@@ -202,6 +209,9 @@ class HomeTableViewController: BaseTableViewController {
         lb.hidden = true
         return lb
     }()
+    
+    // 最后一条微博的标记
+    private var lastStatus = false
 }
 
 extension HomeTableViewController {
@@ -217,6 +227,14 @@ extension HomeTableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! HomeTableViewCell
         cell.viewModel = viewModel
+        
+        // 判断是否是最后一条微博
+        if indexPath.row == (statuses!.count - 1) {
+            SXMLog("最后一条微博")
+            lastStatus = true
+            loadData()
+        }
+        
         
         return cell
     }
