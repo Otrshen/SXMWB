@@ -107,7 +107,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="lPF-3S-omO" secondAttribute="trailing" id="yVf-ic-Tgc"/>
                                             </constraints>
                                         </view>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-QB-gwa">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-QB-gwa" customClass="SXMPictureView" customModule="SXM微博" customModuleProvider="target">
                                             <rect key="frame" x="10" y="110.5" width="290" height="90"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -146,7 +146,9 @@
                                                 </collectionViewCell>
                                             </cells>
                                             <connections>
-                                                <outlet property="dataSource" destination="oVu-M0-CeJ" id="zyN-71-Xow"/>
+                                                <outlet property="flowLayout" destination="RU3-jO-ljl" id="Zf6-By-6DF"/>
+                                                <outlet property="pictureCollectionViewHeightCons" destination="Yz5-kB-thX" id="2Dk-ME-IN3"/>
+                                                <outlet property="pictureCollectionViewWidthCons" destination="rqd-cv-Fjm" id="8Mr-Ua-Crl"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>
@@ -175,13 +177,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="contentLabel" destination="FDc-iE-aKu" id="Xdo-HJ-Ayy"/>
-                                    <outlet property="flowLayout" destination="RU3-jO-ljl" id="4Ax-Zc-8mt"/>
                                     <outlet property="footerView" destination="hcL-6B-if9" id="FIB-vk-7jq"/>
                                     <outlet property="iconImageView" destination="G2n-dN-jrh" id="ykU-B5-hEU"/>
                                     <outlet property="nameLabel" destination="pBH-f9-h9y" id="2JN-Y6-aLM"/>
                                     <outlet property="pictureCollectionView" destination="zdU-QB-gwa" id="P9t-PU-TSy"/>
-                                    <outlet property="pictureCollectionViewHeightCons" destination="Yz5-kB-thX" id="qSh-Uq-U4n"/>
-                                    <outlet property="pictureCollectionViewWidthCons" destination="rqd-cv-Fjm" id="cJO-7W-vg9"/>
                                     <outlet property="sourceLabel" destination="ZOQ-NJ-Z0R" id="zOv-5f-ZID"/>
                                     <outlet property="timeLabel" destination="YhI-9s-L7s" id="IcH-9q-R4L"/>
                                     <outlet property="verifiedImageView" destination="iAG-Fd-zWS" id="3ew-QA-iOe"/>
@@ -240,10 +239,10 @@
                                                 <constraint firstAttribute="width" constant="17" id="u9t-4U-CrB"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nzg-hv-3sq">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzg-hv-3sq">
                                             <rect key="frame" x="0.0" y="110" width="600" height="141"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-MZ-9I2">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-MZ-9I2" customClass="SXMPictureView" customModule="SXM微博" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="40" width="290" height="90"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -282,11 +281,13 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="COH-pZ-QQ8" id="ldE-MY-2cq"/>
+                                                        <outlet property="flowLayout" destination="8Fg-qV-S8V" id="AbK-re-Zbn"/>
+                                                        <outlet property="pictureCollectionViewHeightCons" destination="zSJ-re-DAY" id="Iz4-fc-Faa"/>
+                                                        <outlet property="pictureCollectionViewWidthCons" destination="G1D-zz-enu" id="fjx-sq-FxE"/>
                                                     </connections>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeM-yk-QJN">
-                                                    <rect key="frame" x="10" y="10" width="580" height="20.5"/>
+                                                    <rect key="frame" x="10" y="11" width="580" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -376,14 +377,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="contentLabel" destination="FaA-Tu-czL" id="Yp9-AO-xkI"/>
-                                    <outlet property="flowLayout" destination="8Fg-qV-S8V" id="XRH-FW-bQQ"/>
                                     <outlet property="footerView" destination="s1y-TC-S7O" id="kyT-tx-FC9"/>
                                     <outlet property="forwardLabel" destination="yeM-yk-QJN" id="DRg-yv-Ckj"/>
                                     <outlet property="iconImageView" destination="dck-gM-cSy" id="50R-YH-OvY"/>
                                     <outlet property="nameLabel" destination="L5Q-MT-z1j" id="kPt-kS-nNu"/>
                                     <outlet property="pictureCollectionView" destination="5Cs-MZ-9I2" id="k0n-O6-17k"/>
-                                    <outlet property="pictureCollectionViewHeightCons" destination="zSJ-re-DAY" id="hN5-8L-YwS"/>
-                                    <outlet property="pictureCollectionViewWidthCons" destination="G1D-zz-enu" id="USL-Kt-fQf"/>
                                     <outlet property="sourceLabel" destination="wgn-05-62g" id="gHJ-e3-jEm"/>
                                     <outlet property="timeLabel" destination="R64-cI-I3Y" id="e2c-ml-3XT"/>
                                     <outlet property="verifiedImageView" destination="paQ-b0-beS" id="cYE-bd-po9"/>

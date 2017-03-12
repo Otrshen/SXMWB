@@ -38,6 +38,7 @@
 		C7585BB61E2F952200059B69 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7585BB51E2F952200059B69 /* QRCode.storyboard */; };
 		C7585BB81E2F966B00059B69 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7585BB71E2F966B00059B69 /* QRCodeViewController.swift */; };
 		C771A1431E751327002B17F4 /* StatusListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771A1421E751327002B17F4 /* StatusListModel.swift */; };
+		C771A1451E7523F3002B17F4 /* SXMPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771A1441E7523F3002B17F4 /* SXMPictureView.swift */; };
 		C77346051E333CEB00E64598 /* QRCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346041E333CEB00E64598 /* QRCodeCreateViewController.swift */; };
 		C77346081E33728200E64598 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346071E33728200E64598 /* OAuthViewController.swift */; };
 		C773460A1E33728E00E64598 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77346091E33728E00E64598 /* OAuth.storyboard */; };
@@ -113,6 +114,7 @@
 		C7585BB51E2F952200059B69 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
 		C7585BB71E2F966B00059B69 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		C771A1421E751327002B17F4 /* StatusListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListModel.swift; sourceTree = "<group>"; };
+		C771A1441E7523F3002B17F4 /* SXMPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXMPictureView.swift; sourceTree = "<group>"; };
 		C77346041E333CEB00E64598 /* QRCodeCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCreateViewController.swift; sourceTree = "<group>"; };
 		C77346071E33728200E64598 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		C77346091E33728E00E64598 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				C7204AED1E2663A600710598 /* Home.storyboard */,
 				C7EDDFAD1E50498C00C8082A /* HomeTableViewCell.swift */,
 				C7204ACC1E22766F00710598 /* HomeTableViewController.swift */,
+				C771A1441E7523F3002B17F4 /* SXMPictureView.swift */,
 				C771A1421E751327002B17F4 /* StatusListModel.swift */,
 				C7EDDFAB1E5040DB00C8082A /* User.swift */,
 				C7EDDFA91E503A7100C8082A /* Status.swift */,
@@ -737,6 +740,7 @@
 				C7EDDFB01E5065EA00C8082A /* NSDate+Extension.swift in Sources */,
 				C7585BAF1E2BAC5A00059B69 /* SXMPresentationController.swift in Sources */,
 				C7204ADA1E2518AF00710598 /* UIButton+Extension.swift in Sources */,
+				C771A1451E7523F3002B17F4 /* SXMPictureView.swift in Sources */,
 				C7204AF41E26671C00710598 /* VisitorView.swift in Sources */,
 				C7204ACB1E22764100710598 /* MainViewController.swift in Sources */,
 				C7585BAA1E2B844F00059B69 /* TitleButton.swift in Sources */,
